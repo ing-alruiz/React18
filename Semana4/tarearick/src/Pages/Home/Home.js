@@ -58,7 +58,7 @@ const Home = () => {
 
     return (
         <div className='' >
-            <Nav />
+            {/* <Nav /> */}
             <div className={styles.backgroundImage}>
                 <h1 className={styles.title}>Bienvenidos a la página de Rick y Morty</h1>
                 <p className={styles.description}>Explora el multiverso de Rick y Morty</p>
@@ -79,7 +79,7 @@ const Home = () => {
                     <EpisodeCard key={index} episode={episode} loading={loading} />
                 ))}
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };

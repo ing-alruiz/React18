@@ -1,0 +1,104 @@
+.card {
+    display: flex;
+    background-color: #2d2d2d;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    width: 400px;
+    margin: 10px;
+}
+
+.image {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+}
+
+.content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.status {
+    font-size: 1rem;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.statusIndicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.alive {
+    background-color: #55cc44;
+}
+
+.dead {
+    background-color: #d63d2e;
+}
+
+.unknown {
+    background-color: #9e9e9e;
+}
+
+.location,
+.episode {
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.label {
+    font-weight: bold;
+    color: #9e9e9e;
+}
+
+.loadingCard {
+    background-color: #3a3a3a;
+    
+}
+
+.imagePlaceholder {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+    background-color: #555;
+    animation: pulse 1.5s infinite;
+}
+
+.namePlaceholder,
+.statusPlaceholder,
+.locationPlaceholder,
+.episodePlaceholder {
+    width: 15vw;
+    height: 20px;
+    margin: 10px 0;
+    border-radius: 2vh;
+    animation: pulse 1.5s infinite;
+}
+
+
+@keyframes pulse {
+    0% {
+        background-color: #444;
+    }
+    50% {
+        background-color: #555;
+    }
+    100% {
+        background-color: #444;
+    }
+}

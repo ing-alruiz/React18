@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --primary-color: #1676E0;
   --secondary-color: #E3AD08;
   --text-color: whitesmoke;
@@ -21,7 +21,7 @@ a:visited {
 }
 a:active {
   color: var(--text-color);
-}
+} */
 
 body {
   font-family: Arial, sans-serif;
@@ -29,7 +29,7 @@ body {
   padding: 0;
   color: var(--text-color);
 }
-
+/* 
 button {
   background-color: var(--secondary-color);
   color: var(--text-color);
@@ -38,7 +38,7 @@ button {
   font-size: 1em;
   cursor: pointer;
   border-radius: 5px;
-}
+} */
 
 button:hover {
   background-color: #c7371a; /* This color is not defined as a variable */

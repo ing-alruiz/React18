@@ -1,0 +1,17 @@
+.footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.footer h2 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.footer p {
+    margin: 5px 0 0;
+    font-size: 1em;
+}

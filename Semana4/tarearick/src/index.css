@@ -1,0 +1,45 @@
+:root {
+  --primary-color: #1676E0;
+  --secondary-color: #E3AD08;
+  --text-color: whitesmoke;
+  --text-color-light: #f4f4f4;
+  --text-color-dark: #333;
+  --text-color-dark-light: #555;
+  --background-color: #f4f4f4;
+  --background-color-secondary: #def3ff;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--secondary-color);
+}
+a:visited {
+  color: var(--text-color);
+}
+a:active {
+  color: var(--text-color);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #c7371a; /* This color is not defined as a variable */
+}

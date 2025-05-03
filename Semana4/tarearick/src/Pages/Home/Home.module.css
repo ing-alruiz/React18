@@ -1,0 +1,49 @@
+.backgroundImage{
+    background: linear-gradient(rgba(0, 0, 0, 0.945), rgba(0, 0, 0, 0.945)), url('/src/assets/images/background1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: var(--background-color);
+    height: 30vh;
+    padding-top: 13vh;
+}
+
+main section:not(:first-of-type) {
+    background-color: var(--background-color); /* Use white or your desired color */
+    color: var(--text-color-dark);
+    width: 100%;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    padding: auto;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.characterTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 20px 0;
+    color: var(--text-color-dark);
+}
+
+.characterContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+    color: var(--text-color-dark);
+}

@@ -1,0 +1,33 @@
+.home {
+    text-align: left;
+    padding: 50px;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-family: "Lato", "Roboto", sans-serif;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-family: "M PLUS Code Latin", monospace;
+}
+
+.resumeButton {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.resumeButton:hover {
+    background-color: #45a049;
+}

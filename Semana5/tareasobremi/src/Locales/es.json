@@ -1,0 +1,53 @@
+{
+    "Home": {
+        "title": "¡Hola! Soy Alberto Ruiz",
+        "description": "Ingeniero de Software",
+        "button": "Obtener Currículum"
+    },
+    "Nav": {
+        "home": "Inicio",
+        "porfolio": "Portafolio",
+        "timeline": "Mi Cronología",
+        "skills": "Habilidades",
+        "contact": "Contacto"
+    },
+    "Timeline": {
+        "title": "Línea de Tiempo de Experiencia Laboral",
+        "2022_2024": {
+            "title": "2022 – 2024: Desarrollador .Net en EX2 OutCoding (Revvity), San José, Costa Rica",
+            "details": [
+                "Creó una aplicación de Windows Form utilizando .NET y una base de datos Oracle para exportar experimentos científicos y sus ensayos a PDFs y recuperar documentos, optimizando procedimientos para reducir el tiempo de procesamiento mientras mantenía un registro y manejo de errores adecuado.",
+                "Reestructuró y adaptó un software creado por un colaborador no ingeniero de software para cumplir con los requisitos específicos del cliente, desde la base de datos Oracle hasta un software de terceros.",
+                "Mejoró la estructura del equipo al pasar de métodos tradicionales de desarrollo de software a metodologías ágiles e incorporar inteligencia artificial.",
+                "Instruyó y gestionó a múltiples clientes en el uso de APIs y proporcionó conocimientos generales sobre los productos de software de la empresa."
+            ]
+        },
+        "2020_2022": {
+            "title": "2020 – 2022: Desarrollador de Software II, Ingeniero de Migración en Mobilize.net, San José, Costa Rica",
+            "details": [
+                "Entregó 2 proyectos con compromiso directo con el cliente, a tiempo y con altas calificaciones por parte del cliente.",
+                "Creó y ejecutó más de 5 proyectos en entornos .ASP Net y Windows Forms.",
+                "Colaboró con múltiples clientes en múltiples proyectos al mismo tiempo.",
+                "Dirigió y ejecutó 2 proyectos en Windows Forms con compromiso directo con el cliente."
+            ]
+        },
+        "2019_2020": {
+            "title": "2019 – 2020: Desarrollador de Software I, Ingeniero de Migración en Mobilize.net, San José, Costa Rica",
+            "details": [
+                "Entregó más de 4 proyectos en equipo a tiempo para el cliente."
+            ]
+        },
+        "2018_2019": {
+            "title": "2018 – 2019: Desarrollador Interno en el departamento VBUC (Visual Basic Upgrade Companion)",
+            "details": [
+                "Creó un IDE de aplicación web en Angular 5 para un entorno de edición completo basado en un nuevo lenguaje de programación creado por la empresa."
+            ]
+        },
+        "2017": {
+            "title": "2017 (1er Semestre): Desarrollador de Proyecto de Agricultura de Precisión en Colono Agropecuario – Avantica – Tecnológico de Costa Rica, Zona Norte, Costa Rica",
+            "details": [
+                "Mejoró el rendimiento de una aplicación Django especializada en procesamiento de imágenes de 48 horas a 4 horas."
+            ]
+        }
+    }
+}

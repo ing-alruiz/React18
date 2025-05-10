@@ -1,0 +1,52 @@
+:root {
+  --primary-color: #1676E0;
+  --secondary-color: #E3AD08;
+  --text-color: whitesmoke;
+  --text-color-light: #f4f4f4;
+  --text-color-dark: #333;
+  --text-color-dark-light: #555;
+  --background-color: #2A2C39;
+  --background-color-secondary: #252734;
+}
+
+/* FONTS */
+/* Quintessential */
+@import url('https://fonts.googleapis.com/css2?family=Quintessential&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin:wght@100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--secondary-color);
+}
+a:visited {
+  color: var(--text-color);
+}
+a:active {
+  color: var(--text-color);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #c7371a; /* This color is not defined as a variable */
+}

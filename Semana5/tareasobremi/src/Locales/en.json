@@ -1,0 +1,60 @@
+{
+    "Home": {
+        "welcome": "Hello! I'm ",
+        "name": "Alberto Ruiz",
+        "pasionate": "I am passionate about ",
+        "description": [
+            "software development.",
+            "creating innovative solutions.",
+            "learning new technologies.",
+            "collaborating with teams."
+        ],
+        "button": "Get Resume"
+    },
+    "Nav" : {
+        "home": "Home",
+        "porfolio": "Portfolio",
+        "timeline": "My Timeline",
+        "skills": "Skills",
+        "contact": "Contact"
+    },
+    "Timeline": {
+        "title": "Work Experience Timeline",
+        "2022_2024": {
+            "title": "2022 – 2024: .Net Developer at EX2 OutCoding (Revvity), San José, Costa Rica",
+            "details": [
+                "Created a Windows Form application using .NET and Oracle database to export scientific experiments and their assays into PDFs and recovering documents, optimizing procedures to reduce processing time while maintaining proper error logging and management.",
+                "Restructured and adapted a piece of software created by a non-software engineer collaborator to meet specific client requirements, from Oracle database into third-party software.",
+                "Improved team structure by transitioning from traditional software development methods to Agile methodologies and incorporating artificial intelligence.",
+                "Instructed and managed multiple customers on the use of APIs and provided general knowledge of the company’s software products."
+            ]
+        },
+        "2020_2022": {
+            "title": "2020 – 2022: Software Developer II, Migration Engineer at Mobilize.net, San José, Costa Rica",
+            "details": [
+                "Delivered 2 projects with client engagement alone, and on time with high scores by the client.",
+                "Created and executed more than 5 projects on .ASP Net environments and Windows Forms.",
+                "Collaborated with multiple clients on multiple projects at the same time.",
+                "Directed and executed 2 projects on Windows Forms with client engagement."
+            ]
+        },
+        "2019_2020": {
+            "title": "2019 – 2020: Software Developer I, Migration Engineer at Mobilize.net, San José, Costa Rica",
+            "details": [
+                "Delivered more than 4 teamwork projects on time to the client."
+            ]
+        },
+        "2018_2019": {
+            "title": "2018 – 2019: Intern Developer at VBUC (Visual Basic Upgrade Companion) department",
+            "details": [
+                "Created a Web Application IDE on Angular 5 for a complete editing environment based on a new programming language created by the company."
+            ]
+        },
+        "2017": {
+            "title": "2017 (1st Semester): Precision Agriculture Project Developer at Colono Agropecuario – Avantica – Tecnológico de Costa Rica, North Zone, Costa Rica",
+            "details": [
+                "Improved from 48 hours to 4 hours the performance of a Django application specialized in Image Processing."
+            ]
+        }
+    }
+}

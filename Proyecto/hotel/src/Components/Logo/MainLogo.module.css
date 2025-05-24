@@ -1,0 +1,20 @@
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.logoImage {
+  height: 100%;
+  width: auto;
+  margin-right: 12px;
+}
+
+.logoText {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: left;
+  color: var(--color-accent, #0f72db);
+  font-family: 'Ancizar Serif', serif;
+}

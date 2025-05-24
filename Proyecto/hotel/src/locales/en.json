@@ -1,0 +1,15 @@
+{
+  "welcome": "Welcome to the Home Page",
+  "about": "About Us",
+  "notFound": "404 - Page Not Found",
+  "slogan": "A vacation home for your best friend.",
+  "menu": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "services": "Services",
+    "blog": "Blog",
+    "gallery": "Gallery",
+    "dashboard": "Dashboard"
+  }
+}

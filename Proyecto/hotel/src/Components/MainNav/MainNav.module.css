@@ -1,0 +1,42 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent !important;
+  height: 100%;
+  padding: 0 2vw;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+}
+
+.menuItem {
+  color: var(--color-white, #fff);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  transition: border-bottom 0.2s, color 0.2s;
+  border-bottom: 2px solid transparent;
+}
+
+.selected {
+  background: none !important;
+  color: var(--color-accent, #D4AF37) !important;
+  border-bottom: 2.5px solid var(--color-accent, #D4AF37);
+}
+
+.menuLink {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}

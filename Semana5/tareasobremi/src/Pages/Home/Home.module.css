@@ -1,8 +1,36 @@
 .home {
     text-align: left;
-    padding: 50px;
+    padding: 0vh 10vw;
+    padding-top: 10vh;
     color: #fff;
     font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: row;
+    height: 60vh;
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.582) 1%, transparent 50%);
+    background-size: 2px 2px; /* Adjust the size of the granular effect */
+    background-repeat: repeat;
+}
+
+.iam {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: "Quintessential", cursive;
+    width: 40%;
+}
+
+.hero {
+    width: 70%;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.hero img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 h1 {
@@ -15,6 +43,24 @@ p {
     font-size: 1.2rem;
     margin-bottom: 30px;
     font-family: "M PLUS Code Latin", monospace;
+}
+
+.heroSocials {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    font-size: 1vw;
+}
+
+.heroSocials div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1vh 0;
+    padding: 1vw;
+    border: 1px solid #ffffff6e;
+    border-radius: 20%;
 }
 
 .resumeButton {

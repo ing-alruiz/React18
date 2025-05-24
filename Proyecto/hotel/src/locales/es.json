@@ -1,0 +1,15 @@
+{
+    "welcome": "Bienvenido a la página principal",
+    "about": "Sobre nosotros",
+    "notFound": "404 - Página no encontrada",
+    "slogan": "Un hogar de vacaciones para tu mejor amigo.",
+    "menu": {
+        "home": "Inicio",
+        "about": "Sobre nosotros",
+        "contact": "Contacto",
+        "services": "Servicios",
+        "blog": "Blog",
+        "gallery": "Galería",
+        "dashboard": "Tablero"
+    }
+}

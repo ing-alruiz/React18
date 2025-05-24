@@ -1,7 +1,14 @@
 {
     "Home": {
-        "title": "¡Hola! Soy Alberto Ruiz",
-        "description": "Ingeniero de Software",
+        "welcome": "¡Hola! Soy ",
+        "name": "Alberto Ruiz",
+        "pasionate": "Soy apasionado por ",
+        "description": [
+            "el desarrollo de software.",
+            "crear soluciones innovadoras.",
+            "aprender nuevas tecnologías.",
+            "colaborar con equipos."
+        ],
         "button": "Obtener Currículum"
     },
     "Nav": {

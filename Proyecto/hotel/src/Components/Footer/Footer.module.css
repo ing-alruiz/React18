@@ -1,0 +1,140 @@
+.footer {
+  background: #2c313a;
+  color: #fff;
+  padding: 48px 0 0 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 1 1 220px;
+  min-width: 220px;
+  margin-bottom: 32px;
+}
+
+.logoSection {
+  margin-bottom: 24px;
+}
+
+.logo {
+  font-size: 2.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #b0b3c6;
+  margin-bottom: 18px;
+}
+
+.socialRow {
+  display: flex;
+  gap: 16px;
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+}
+
+.proSection {
+  margin-top: 16px;
+  border-top: 1px solid #555;
+  padding-top: 16px;
+  font-size: 0.95rem;
+}
+
+.infoBtn {
+  margin-top: 12px;
+  padding: 8px 24px;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.infoBtn:hover {
+  background: #fff;
+  color: #2c313a;
+}
+
+.colTitle {
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.column ul li {
+  margin-bottom: 8px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 6px;
+  font-size: 0.97rem;
+  color: #e0e0e0;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.column ul li:hover {
+  color: #ffd700;
+}
+
+.appSection {
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+.appTitle {
+  font-size: 0.95rem;
+  color: #b0b3c6;
+}
+.appSubtitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.appBtns {
+  display: flex;
+  gap: 16px;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+.downloadText {
+  font-size: 0.9rem;
+  color: #b0b3c6;
+}
+
+.certSection {
+  margin-top: 18px;
+}
+.certSection img {
+  width: 90px;
+  background: #fff;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.footerBottom {
+  border-top: 1px solid #444;
+  margin-top: 24px;
+  padding: 16px 0;
+  text-align: center;
+  color: #b0b3c6;
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}

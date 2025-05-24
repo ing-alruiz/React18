@@ -1,8 +1,190 @@
 {
-    "posts": [],
-    "profile": {
-        "name": "admin"
+  "roomTypes": [
+    {
+      "id": "1",
+      "species": "perro",
+      "name": "Pequeño",
+      "description": "Habitación para perros pequeños",
+      "price": 20
     },
-    "users": [
-    ]
+    {
+      "id": "2",
+      "species": "perro",
+      "name": "Mediano",
+      "description": "Habitación para perros medianos",
+      "price": 25
+    },
+    {
+      "id": "3",
+      "species": "perro",
+      "name": "Grande",
+      "description": "Habitación para perros grandes",
+      "price": 30
+    },
+    {
+      "id": "4",
+      "species": "gato",
+      "name": "Individual",
+      "description": "Habitación individual para gatos",
+      "price": 18
+    },
+    {
+      "id": "5",
+      "species": "gato",
+      "name": "Compartida",
+      "description": "Habitación compartida para gatos",
+      "price": 12
+    }
+  ],
+  "services": [
+    {
+      "id": "1",
+      "name": "Alimentación especializada",
+      "price": 5
+    },
+    {
+      "id": "2",
+      "name": "Paseos",
+      "price": 8
+    },
+    {
+      "id": "3",
+      "name": "Juegos supervisados",
+      "price": 6
+    },
+    {
+      "id": "4",
+      "name": "Grooming",
+      "price": 15
+    },
+    {
+      "id": "5",
+      "name": "Entrenamiento básico",
+      "price": 10
+    },
+    {
+      "id": "6",
+      "name": "Atención veterinaria",
+      "price": 20
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "1",
+      "name": "Ana López",
+      "comment": "¡Excelente atención y cuidado para mi perro!",
+      "rating": 5
+    },
+    {
+      "id": "2",
+      "name": "Carlos Pérez",
+      "comment": "Mi gato estuvo feliz y seguro. ¡Repetiremos!",
+      "rating": 5
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "role": "cliente",
+      "name": "Ana López",
+      "email": "ana@email.com",
+      "address": "Calle 1, Ciudad",
+      "phone": "600123123",
+      "pets": [
+        {
+          "id": 1,
+          "name": "Rocky",
+          "species": "perro",
+          "breed": "Labrador",
+          "age": 3,
+          "size": "Grande",
+          "weight": 30,
+          "specialNeeds": "Sin necesidades especiales",
+          "temperament": "Juguetón",
+          "vaccines": [
+            "Rabia",
+            "Parvovirus"
+          ],
+          "photo": "/images/rocky.jpg"
+        }
+      ]
+    },
+    {
+      "id": "ce7f",
+      "name": "Beto",
+      "email": "beto@test.com",
+      "password": "e95eef675e2cbbe6ea7e61dc3d7b6c5767b44a1704a02c6109e6f8668d8afa8e"
+    }
+  ],
+  "reservations": [
+    {
+      "id": "1",
+      "userId": 1,
+      "petIds": [
+        1
+      ],
+      "roomTypeId": 3,
+      "services": [
+        2,
+        3
+      ],
+      "checkIn": "2024-07-01",
+      "checkOut": "2024-07-07",
+      "status": "confirmada",
+      "total": 78
+    }
+  ],
+  "activityLogs": [
+    {
+      "id": "1",
+      "petId": 1,
+      "date": "2024-07-02",
+      "activities": [
+        "Paseo matutino",
+        "Juego en el patio",
+        "Alimentación especial"
+      ],
+      "photos": [
+        "/images/actividad1.jpg"
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "id": "1",
+      "from": "cliente",
+      "userId": 1,
+      "to": "hotel",
+      "message": "¿Cómo está Rocky hoy?",
+      "date": "2024-07-02T10:00:00"
+    },
+    {
+      "id": "2",
+      "from": "hotel",
+      "userId": 1,
+      "to": "cliente",
+      "message": "Rocky está muy bien y ha jugado mucho esta mañana.",
+      "date": "2024-07-02T11:00:00"
+    }
+  ],
+  "faqs": [
+    {
+      "id": "1",
+      "question": "¿Qué vacunas necesita mi mascota?",
+      "answer": "Debe tener al día las vacunas básicas según su especie."
+    },
+    {
+      "id": "2",
+      "question": "¿Puedo llevar la comida de mi mascota?",
+      "answer": "Sí, aceptamos alimentación personalizada."
+    }
+  ],
+  "admins": [
+    {
+      "id": "1",
+      "role": "admin",
+      "name": "Admin Principal",
+      "email": "admin@hotelmascotas.com"
+    }
+  ]
 }

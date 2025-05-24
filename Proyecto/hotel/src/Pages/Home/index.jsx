@@ -8,6 +8,7 @@ import video2 from '@Videos/video2.mp4';
 import video3 from '@Videos/video3.mp4';
 import MainNav from '../../Components/MainNav';
 import Footer from '../../Components/Footer';
+import Testimonials from '../../Components/Testimonials';
 
 const videoList = [video1, video2, video3];
 
@@ -60,6 +61,7 @@ const Home = () => {
                 <li>24/7 Room Service</li>
                 </ul>
             </div>
+            <Testimonials />
             <Footer />
         </div>
     );

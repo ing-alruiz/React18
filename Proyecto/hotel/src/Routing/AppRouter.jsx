@@ -4,7 +4,9 @@ import Home from '@Pages/Home';
 import About from '@Pages/About';
 import NotFound from '@Pages/NotFound';
 import Dashboard from '@Pages/Dashboard/Home';
-import MainNav from '../Components/MainNav';
+import AdminRoute from './AdminRoute';
+import Login from '@Pages/Login';
+import Signup from '@Pages/Signup';
 
 
 const AppRouter = () => {
@@ -17,8 +19,20 @@ const AppRouter = () => {
                 <Route path="/about" element={<>
                         <About />
                     </>} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route
+                  path="/dashboard"
+                  element={
+                    <AdminRoute>
+                      <Dashboard />
+                    </AdminRoute>
+                  }
+                />
+
+
+
                 <Route path="*" element={<NotFound />} />
-                <Route path="/dashboard" element={<Dashboard/>} />
             </Routes>
         </Router>
     );

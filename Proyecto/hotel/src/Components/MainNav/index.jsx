@@ -29,6 +29,9 @@ const MainNav = () => {
         <div className={styles.menuItem + ' ' + (selectedKey === '/dashboard' ? styles.selected : '')}>
           <Link to="/dashboard" className={styles.menuLink}>{t('menu.dashboard')}</Link>
         </div>
+        <div className={styles.menuItem + ' ' + (selectedKey === '/mibooks' ? styles.selected : '')}>
+          <Link to="/mibooks" className={styles.menuLink}>{t('menu.miBook')}</Link>
+        </div>
         <LanguageSelector/>
       </div>
     </nav>

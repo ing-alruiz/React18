@@ -11,6 +11,47 @@
     "blog": "Blog",
     "gallery": "Gallery",
     "dashboard": "Dashboard",
+    "book": "Book",
+    "miBook": "My Bookings"
+  },
+  "footer": {
+    "hotelName": "Hotel Mascotas Nobles",
+    "hotelSubtitle": "HOTELS & GROOM",
+    "proTitle": "Mascotel Pro",
+    "proDescription": "The portal for professionals. Access all the sales and information tools!",
+    "moreInfo": "More information",
+    "aboutUs": "ABOUT US",
+    "aboutMascotel": "About Mascotel",
+    "ourBrands": "Our Brands",
+    "eliteClub": "Elite Club",
+    "proudlyCommitted": "Proudly Committed",
+    "magazine": "Magazine",
+    "communication": "Communication",
+    "newOpenings": "New Openings",
+    "codeOfEthics": "Code of Ethics",
+    "fraudPrevention": "Fraud Prevention",
+    "whistleblowingChannel": "Whistleblowing Channel",
+    "transparencyPortal": "Transparency Portal",
+    "compliancePolicy": "Compliance Policy",
+    "services": "SERVICES",
+    "reservations": "RESERVATIONS",
+    "corporateCode": "Corporate Code",
+    "weddings": "Weddings",
+    "meetingsEvents": "Meetings & Events",
+    "privacy": "Privacy Statement",
+    "terms": "Terms and Conditions",
+    "cookies": "Cookies policy"
+  },
+  "reservationBar": {
+    "roomType": "Room Type",
+    "selectRoomType": "Select room type",
+    "dates": "How long do we care for your pet?",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "guests": "How many pets?",
     "book": "Book"
+  },
+  "testimonials": {
+    "error": "Failed to load testimonials"
   }
 }

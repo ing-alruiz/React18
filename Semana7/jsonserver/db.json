@@ -37,78 +37,96 @@
     }
   ],
   "services": [
-     {
-    "id": 1,
-    "title": "Grooming Pets",
-    "description": "Professional grooming for all breeds, including bath, haircut, and nail trimming.",
-    "icon": ["fas", "cut"],
-    "image": "/images/services/grooming.jpg",
-    "price": 15
-  },
-  {
-    "id": 2,
-    "title": "Basic Training",
-    "description": "Obedience and basic commands for your pet to improve behavior.",
-    "icon": ["fas", "dog"],
-    "image": "/images/services/basic-training.jpg",
-    "price": 20
-  },
-  {
-    "id": 3,
-    "title": "Advanced Training",
-    "description": "Advanced skills and tricks for well-behaved and talented pets.",
-    "icon": ["fas", "graduation-cap"],
-    "image": "/images/services/advanced-training.png",
-    "price": 30
-  },
-  {
-    "id": 4,
-    "title": "Veterinary Attention",
-    "description": "On-site veterinary care for check-ups and emergencies.",
-    "icon": ["fas", "stethoscope"],
-    "image": "/images/services/veterinary.jpg",
-    "price": 25
-  },
-  {
-    "id": 5,
-    "title": "Walks",
-    "description": "Daily walks and outdoor playtime for exercise and fun.",
-    "icon": ["fas", "walking"],
-    "image": "/images/services/walks.jpg",
-    "price": 8
-  },
-  {
-    "id": 6,
-    "title": "Pool Time",
-    "description": "Supervised swimming sessions in our pet-friendly pool.",
-    "icon": ["fas", "swimmer"],
-    "image": "/images/services/pool.jpg",
-    "price": 12
-  },
-  {
-    "id": 7,
-    "title": "Specialized Feeding",
-    "description": "Custom meal plans and special diets for your pet’s needs.",
-    "icon": ["fas", "utensils"],
-    "image": "/images/services/feeding.jpg",
-    "price": 5
-  },
-  {
-    "id": 8,
-    "title": "Supervised Play",
-    "description": "Group and individual play sessions with staff supervision.",
-    "icon": ["fas", "paw"],
-    "image": "/images/services/play.jpg",
-    "price": 6
-  },
-  {
-    "id": 9,
-    "title": "Pet Taxi",
-    "description": "Pick-up and drop-off service for your convenience.",
-    "icon": ["fas", "car-side"],
-    "image": "/images/services/taxi.jpg",
-    "price": 10
-  }
+    {
+      "id": 1,
+      "title_en": "Grooming Pets",
+      "title_es": "Peluquería de Mascotas",
+      "description_en": "Professional grooming for all breeds, including bath, haircut, and nail trimming.",
+      "description_es": "Peluquería profesional para todas las razas, incluye baño, corte y corte de uñas.",
+      "icon": ["fas", "cut"],
+      "image": "/images/services/grooming.jpg",
+      "price": 15
+    },
+    {
+      "id": 2,
+      "title_en": "Basic Training",
+      "title_es": "Entrenamiento Básico",
+      "description_en": "Obedience and basic commands for your pet to improve behavior.",
+      "description_es": "Obediencia y comandos básicos para mejorar el comportamiento de tu mascota.",
+      "icon": ["fas", "dog"],
+      "image": "/images/services/basic-training.jpg",
+      "price": 20
+    },
+    {
+      "id": 3,
+      "title_en": "Advanced Training",
+      "title_es": "Entrenamiento Avanzado",
+      "description_en": "Advanced skills and tricks for well-behaved and talented pets.",
+      "description_es": "Habilidades avanzadas y trucos para mascotas educadas y talentosas.",
+      "icon": ["fas", "graduation-cap"],
+      "image": "/images/services/advanced-training.png",
+      "price": 30
+    },
+    {
+      "id": 4,
+      "title_en": "Veterinary Attention",
+      "title_es": "Atención Veterinaria",
+      "description_en": "On-site veterinary care for check-ups and emergencies.",
+      "description_es": "Atención veterinaria en el hotel para revisiones y emergencias.",
+      "icon": ["fas", "stethoscope"],
+      "image": "/images/services/veterinary.jpg",
+      "price": 25
+    },
+    {
+      "id": 5,
+      "title_en": "Walks",
+      "title_es": "Paseos",
+      "description_en": "Daily walks and outdoor playtime for exercise and fun.",
+      "description_es": "Paseos diarios y tiempo de juego al aire libre para ejercicio y diversión.",
+      "icon": ["fas", "walking"],
+      "image": "/images/services/walks.jpg",
+      "price": 8
+    },
+    {
+      "id": 6,
+      "title_en": "Pool Time",
+      "title_es": "Tiempo de Piscina",
+      "description_en": "Supervised swimming sessions in our pet-friendly pool.",
+      "description_es": "Sesiones de natación supervisadas en nuestra piscina para mascotas.",
+      "icon": ["fas", "swimmer"],
+      "image": "/images/services/pool.jpg",
+      "price": 12
+    },
+    {
+      "id": 7,
+      "title_en": "Specialized Feeding",
+      "title_es": "Alimentación Especializada",
+      "description_en": "Custom meal plans and special diets for your pet’s needs.",
+      "description_es": "Planes de alimentación personalizados y dietas especiales para tu mascota.",
+      "icon": ["fas", "utensils"],
+      "image": "/images/services/feeding.jpg",
+      "price": 5
+    },
+    {
+      "id": 8,
+      "title_en": "Supervised Play",
+      "title_es": "Juego Supervisado",
+      "description_en": "Group and individual play sessions with staff supervision.",
+      "description_es": "Sesiones de juego grupales e individuales con supervisión del personal.",
+      "icon": ["fas", "paw"],
+      "image": "/images/services/play.jpg",
+      "price": 6
+    },
+    {
+      "id": 9,
+      "title_en": "Pet Taxi",
+      "title_es": "Taxi para Mascotas",
+      "description_en": "Pick-up and drop-off service for your convenience.",
+      "description_es": "Servicio de recogida y entrega de mascotas para tu comodidad.",
+      "icon": ["fas", "car-side"],
+      "image": "/images/services/taxi.jpg",
+      "price": 10
+    }
   ],
   "testimonials": [
     {

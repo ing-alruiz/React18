@@ -1,0 +1,53 @@
+.reservationBar {
+  display: flex;
+  flex-grow: 4;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 16px;
+  align-items: center;
+  gap: 16px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  margin-right: 12px;
+  color: #333;
+  margin: auto;
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: auto;
+  margin-top: 1vh;
+}
+
+.icon {
+  color: #888;
+  margin-left: 4px;
+}
+
+.smallInput {
+  width: 32px;
+  margin: 0 4px;
+  text-align: center;
+}
+
+.searchBtn {
+  background-color:  var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 2rem;
+  display: flex;
+  align-items: right;
+  margin: auto;
+  padding: 3.5vh 3.5vw;
+}

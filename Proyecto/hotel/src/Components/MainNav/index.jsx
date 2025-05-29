@@ -23,6 +23,9 @@ const MainNav = () => {
         <div className={styles.menuItem + ' ' + (selectedKey === '/about' ? styles.selected : '')}>
           <Link to="/about" className={styles.menuLink}>{t('menu.about')}</Link>
         </div>
+        <div className={styles.menuItem + ' ' + (selectedKey === '/book' ? styles.selected : '')}>
+          <Link to="/book" className={styles.menuLink}>{t('menu.book')}</Link>
+        </div>
         <div className={styles.menuItem + ' ' + (selectedKey === '/dashboard' ? styles.selected : '')}>
           <Link to="/dashboard" className={styles.menuLink}>{t('menu.dashboard')}</Link>
         </div>

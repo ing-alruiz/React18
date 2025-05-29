@@ -60,6 +60,7 @@ export const loginUser = async (identifier, password) => {
     );
     return user || null;
 };
+
 export const registerUser = async (userData) => {
     // Hash the password before sending
     const hashedPassword = await hashPassword(userData.password);

@@ -6,9 +6,12 @@ import styles from './Home.module.css';
 import video1 from '@Videos/video1.mp4';
 import video2 from '@Videos/video2.mp4';
 import video3 from '@Videos/video3.mp4';
-import MainNav from '../../Components/MainNav';
-import Footer from '../../Components/Footer';
-import Testimonials from '../../Components/Testimonials';
+import MainNav from '@Components/MainNav';
+import Footer from '@Components/Footer';
+import Testimonials from '@Components/Testimonials';
+import ReservationBar from '@Components/ReservationBar';
+import Services from '@Components/Services';
+import PetAdvantages from '../../Components/PedAdvantages';
 
 const videoList = [video1, video2, video3];
 
@@ -42,6 +45,7 @@ const Home = () => {
                 </div>
                 <div className={styles.content}>
                     <h1 className={styles.slogan}>{t('slogan')}</h1>
+                    <ReservationBar className={styles.reservationBar}/>
                 </div>
             </div>
 
@@ -52,15 +56,8 @@ const Home = () => {
                 Welcome to our hotel! Enjoy your stay with beautiful views and excellent service.
                 </p>
             </div>
-
-            <div style={{ padding: '2rem', background: '#f5f5f5', color: '#222' }}>
-                <h2>Our Services</h2>
-                <ul>
-                <li>Free Wi-Fi</li>
-                <li>Swimming Pool</li>
-                <li>24/7 Room Service</li>
-                </ul>
-            </div>
+            <Services />
+            <PetAdvantages />
             <Testimonials />
             <Footer />
         </div>

@@ -37,49 +37,135 @@
     }
   ],
   "services": [
-    {
-      "id": "1",
-      "name": "Alimentación especializada",
-      "price": 5
-    },
-    {
-      "id": "2",
-      "name": "Paseos",
-      "price": 8
-    },
-    {
-      "id": "3",
-      "name": "Juegos supervisados",
-      "price": 6
-    },
-    {
-      "id": "4",
-      "name": "Grooming",
-      "price": 15
-    },
-    {
-      "id": "5",
-      "name": "Entrenamiento básico",
-      "price": 10
-    },
-    {
-      "id": "6",
-      "name": "Atención veterinaria",
-      "price": 20
-    }
+     {
+    "id": 1,
+    "title": "Grooming Pets",
+    "description": "Professional grooming for all breeds, including bath, haircut, and nail trimming.",
+    "icon": ["fas", "cut"],
+    "image": "/images/services/grooming.jpg",
+    "price": 15
+  },
+  {
+    "id": 2,
+    "title": "Basic Training",
+    "description": "Obedience and basic commands for your pet to improve behavior.",
+    "icon": ["fas", "dog"],
+    "image": "/images/services/basic-training.jpg",
+    "price": 20
+  },
+  {
+    "id": 3,
+    "title": "Advanced Training",
+    "description": "Advanced skills and tricks for well-behaved and talented pets.",
+    "icon": ["fas", "graduation-cap"],
+    "image": "/images/services/advanced-training.png",
+    "price": 30
+  },
+  {
+    "id": 4,
+    "title": "Veterinary Attention",
+    "description": "On-site veterinary care for check-ups and emergencies.",
+    "icon": ["fas", "stethoscope"],
+    "image": "/images/services/veterinary.jpg",
+    "price": 25
+  },
+  {
+    "id": 5,
+    "title": "Walks",
+    "description": "Daily walks and outdoor playtime for exercise and fun.",
+    "icon": ["fas", "walking"],
+    "image": "/images/services/walks.jpg",
+    "price": 8
+  },
+  {
+    "id": 6,
+    "title": "Pool Time",
+    "description": "Supervised swimming sessions in our pet-friendly pool.",
+    "icon": ["fas", "swimmer"],
+    "image": "/images/services/pool.jpg",
+    "price": 12
+  },
+  {
+    "id": 7,
+    "title": "Specialized Feeding",
+    "description": "Custom meal plans and special diets for your pet’s needs.",
+    "icon": ["fas", "utensils"],
+    "image": "/images/services/feeding.jpg",
+    "price": 5
+  },
+  {
+    "id": 8,
+    "title": "Supervised Play",
+    "description": "Group and individual play sessions with staff supervision.",
+    "icon": ["fas", "paw"],
+    "image": "/images/services/play.jpg",
+    "price": 6
+  },
+  {
+    "id": 9,
+    "title": "Pet Taxi",
+    "description": "Pick-up and drop-off service for your convenience.",
+    "icon": ["fas", "car-side"],
+    "image": "/images/services/taxi.jpg",
+    "price": 10
+  }
   ],
   "testimonials": [
     {
       "id": "1",
       "name": "Ana López",
       "comment": "¡Excelente atención y cuidado para mi perro!",
-      "rating": 5
+      "rating": 5,
+      "image": "https://randomuser.me/api/portraits/women/66.jpg"
     },
     {
       "id": "2",
       "name": "Carlos Pérez",
       "comment": "Mi gato estuvo feliz y seguro. ¡Repetiremos!",
-      "rating": 5
+      "rating": 5,
+      "image": "https://randomuser.me/api/portraits/men/75.jpg"
+    },
+    {
+      "id": "3",
+      "name": "María Fernández",
+      "comment": "El personal es muy amable y profesional. Mi mascota estuvo como en casa.",
+      "rating": 5,
+      "image": "https://randomuser.me/api/portraits/women/68.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Luis Ramírez",
+      "comment": "Las instalaciones son limpias y seguras. Muy recomendable.",
+      "rating": 4,
+      "image": "https://randomuser.me/api/portraits/men/76.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Sofía Torres",
+      "comment": "Me enviaron fotos y actualizaciones diarias. ¡Gran tranquilidad!",
+      "rating": 5,
+      "image": "https://randomuser.me/api/portraits/women/65.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Javier Gómez",
+      "comment": "Mi perro disfrutó mucho de la piscina y los paseos.",
+      "rating": 5,
+      "image": "https://randomuser.me/api/portraits/men/77.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Patricia Ruiz",
+      "comment": "El servicio veterinario fue rápido y eficiente. Muy agradecida.",
+      "rating": 5,
+      "image": "https://randomuser.me/api/portraits/women/67.jpg"
+    },
+    {
+      "id": "8",
+      "name": "Ricardo Díaz",
+      "comment": "Precios justos y excelente atención personalizada.",
+      "rating": 4,
+      "image": "https://randomuser.me/api/portraits/men/78.jpg"
     }
   ],
   "users": [
@@ -90,6 +176,7 @@
       "email": "ana@email.com",
       "address": "Calle 1, Ciudad",
       "phone": "600123123",
+      "type": "cliente",
       "pets": [
         {
           "id": 1,
@@ -113,7 +200,18 @@
       "id": "ce7f",
       "name": "Beto",
       "email": "beto@test.com",
-      "password": "e95eef675e2cbbe6ea7e61dc3d7b6c5767b44a1704a02c6109e6f8668d8afa8e"
+      "password": "e95eef675e2cbbe6ea7e61dc3d7b6c5767b44a1704a02c6109e6f8668d8afa8e",
+      "type": "admin"
+    }
+  ],
+  "usersTypes": [
+    {
+      "id": "1",
+      "name": "cliente"
+    },
+    {
+      "id": "2",
+      "name": "admin"
     }
   ],
   "reservations": [
@@ -177,14 +275,6 @@
       "id": "2",
       "question": "¿Puedo llevar la comida de mi mascota?",
       "answer": "Sí, aceptamos alimentación personalizada."
-    }
-  ],
-  "admins": [
-    {
-      "id": "1",
-      "role": "admin",
-      "name": "Admin Principal",
-      "email": "admin@hotelmascotas.com"
     }
   ]
 }

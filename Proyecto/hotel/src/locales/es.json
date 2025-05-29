@@ -10,6 +10,7 @@
         "services": "Servicios",
         "blog": "Blog",
         "gallery": "Galería",
-        "dashboard": "Tablero"
+        "dashboard": "Tablero",
+        "book": "Reservar"
     }
 }

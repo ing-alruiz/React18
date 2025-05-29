@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import path from 'path';
+import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -15,4 +15,7 @@ export default defineConfig({
       '@Api': path.resolve(__dirname, './src/Api'),
     },
   },
+  server: {
+    allowedHosts: ['edaa-2803-5840-1040-800-00-1004.ngrok-free.app']
+  }
 })

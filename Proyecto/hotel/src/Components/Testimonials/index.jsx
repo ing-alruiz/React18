@@ -29,11 +29,28 @@ const Testimonials = () => {
     <div style={{ padding: '2rem', background: '#fff' }}>
       <h2 style={{ textAlign: 'center', marginBottom: 32 }}>Testimonials</h2>
       <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', justifyContent: 'center' }}>
-        {testimonials.map(({ id, name, comment, rating }) => (
-          <Card key={id} style={{ width: 320, margin: '0 8px' }}>
-            <Rate disabled defaultValue={rating} />
-            <p style={{ fontStyle: 'italic', margin: '16px 0' }}>"{comment}"</p>
-            <p style={{ fontWeight: 'bold', marginBottom: 0 }}>{name}</p>
+        {testimonials.map(({ id, name, comment, rating, image }) => (
+          <Card key={id} style={{ width: 340, margin: '0 8px', padding: 0 }}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <img
+                src={image || '/images/default-avatar.png'}
+                alt={name}
+                style={{
+                  width: 64,
+                  height: 64,
+                  borderRadius: '50%',
+                  objectFit: 'cover',
+                  marginRight: 16,
+                  flexShrink: 0,
+                  background: '#eee'
+                }}
+              />
+              <div>
+                <Rate disabled defaultValue={rating} />
+                <p style={{ fontStyle: 'italic', margin: '12px 0 8px 0' }}>"{comment}"</p>
+                <p style={{ fontWeight: 'bold', marginBottom: 0 }}>{name}</p>
+              </div>
+            </div>
           </Card>
         ))}
       </div>

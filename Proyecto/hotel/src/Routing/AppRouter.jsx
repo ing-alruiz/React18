@@ -26,6 +26,8 @@ const AppRouter = () => (
         <Route path="/about" element={<About />} />
         <Route path="/book" element={<Booking />} />
         <Route path="/privacy" element={<PrivacyStatement />} />
+        {/* 404 */}
+        <Route path="*" element={<NotFound />} />
       </Route>
 
       {/* Auth pages without layout */}
@@ -42,8 +44,6 @@ const AppRouter = () => (
         }
       />
 
-      {/* 404 */}
-      <Route path="*" element={<NotFound />} />
     </Routes>
   </Router>
 );

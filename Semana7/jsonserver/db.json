@@ -38,92 +38,119 @@
   ],
   "services": [
     {
-      "id": 1,
+      "id": "1",
       "title_en": "Grooming Pets",
       "title_es": "Peluquería de Mascotas",
       "description_en": "Professional grooming for all breeds, including bath, haircut, and nail trimming.",
       "description_es": "Peluquería profesional para todas las razas, incluye baño, corte y corte de uñas.",
-      "icon": ["fas", "cut"],
+      "icon": [
+        "fas",
+        "cut"
+      ],
       "image": "/images/services/grooming.jpg",
       "price": 15
     },
     {
-      "id": 2,
+      "id": "2",
       "title_en": "Basic Training",
       "title_es": "Entrenamiento Básico",
       "description_en": "Obedience and basic commands for your pet to improve behavior.",
       "description_es": "Obediencia y comandos básicos para mejorar el comportamiento de tu mascota.",
-      "icon": ["fas", "dog"],
+      "icon": [
+        "fas",
+        "dog"
+      ],
       "image": "/images/services/basic-training.jpg",
       "price": 20
     },
     {
-      "id": 3,
+      "id": "3",
       "title_en": "Advanced Training",
       "title_es": "Entrenamiento Avanzado",
       "description_en": "Advanced skills and tricks for well-behaved and talented pets.",
       "description_es": "Habilidades avanzadas y trucos para mascotas educadas y talentosas.",
-      "icon": ["fas", "graduation-cap"],
+      "icon": [
+        "fas",
+        "graduation-cap"
+      ],
       "image": "/images/services/advanced-training.png",
       "price": 30
     },
     {
-      "id": 4,
+      "id": "4",
       "title_en": "Veterinary Attention",
       "title_es": "Atención Veterinaria",
       "description_en": "On-site veterinary care for check-ups and emergencies.",
       "description_es": "Atención veterinaria en el hotel para revisiones y emergencias.",
-      "icon": ["fas", "stethoscope"],
+      "icon": [
+        "fas",
+        "stethoscope"
+      ],
       "image": "/images/services/veterinary.jpg",
       "price": 25
     },
     {
-      "id": 5,
+      "id": "5",
       "title_en": "Walks",
       "title_es": "Paseos",
       "description_en": "Daily walks and outdoor playtime for exercise and fun.",
       "description_es": "Paseos diarios y tiempo de juego al aire libre para ejercicio y diversión.",
-      "icon": ["fas", "walking"],
+      "icon": [
+        "fas",
+        "walking"
+      ],
       "image": "/images/services/walks.jpg",
       "price": 8
     },
     {
-      "id": 6,
+      "id": "6",
       "title_en": "Pool Time",
       "title_es": "Tiempo de Piscina",
       "description_en": "Supervised swimming sessions in our pet-friendly pool.",
       "description_es": "Sesiones de natación supervisadas en nuestra piscina para mascotas.",
-      "icon": ["fas", "swimmer"],
+      "icon": [
+        "fas",
+        "swimmer"
+      ],
       "image": "/images/services/pool.jpg",
       "price": 12
     },
     {
-      "id": 7,
+      "id": "7",
       "title_en": "Specialized Feeding",
       "title_es": "Alimentación Especializada",
       "description_en": "Custom meal plans and special diets for your pet’s needs.",
       "description_es": "Planes de alimentación personalizados y dietas especiales para tu mascota.",
-      "icon": ["fas", "utensils"],
+      "icon": [
+        "fas",
+        "utensils"
+      ],
       "image": "/images/services/feeding.jpg",
       "price": 5
     },
     {
-      "id": 8,
+      "id": "8",
       "title_en": "Supervised Play",
       "title_es": "Juego Supervisado",
       "description_en": "Group and individual play sessions with staff supervision.",
       "description_es": "Sesiones de juego grupales e individuales con supervisión del personal.",
-      "icon": ["fas", "paw"],
+      "icon": [
+        "fas",
+        "paw"
+      ],
       "image": "/images/services/play.jpg",
       "price": 6
     },
     {
-      "id": 9,
+      "id": "9",
       "title_en": "Pet Taxi",
       "title_es": "Taxi para Mascotas",
       "description_en": "Pick-up and drop-off service for your convenience.",
       "description_es": "Servicio de recogida y entrega de mascotas para tu comodidad.",
-      "icon": ["fas", "car-side"],
+      "icon": [
+        "fas",
+        "car-side"
+      ],
       "image": "/images/services/taxi.jpg",
       "price": 10
     }
@@ -220,6 +247,12 @@
       "email": "beto@test.com",
       "password": "e95eef675e2cbbe6ea7e61dc3d7b6c5767b44a1704a02c6109e6f8668d8afa8e",
       "type": "admin"
+    },
+    {
+      "id": "cda8",
+      "name": "beto2",
+      "email": "golas@isd.com",
+      "password": "e95eef675e2cbbe6ea7e61dc3d7b6c5767b44a1704a02c6109e6f8668d8afa8e"
     }
   ],
   "usersTypes": [

@@ -12,6 +12,7 @@ import Testimonials from '@Components/Testimonials';
 import ReservationBar from '@Components/ReservationBar';
 import Services from '@Components/Services';
 import PetAdvantages from '../../Components/PedAdvantages';
+import TopInfo from '../../Components/MainNav/TopInfo';
 
 const videoList = [video1, video2, video3];
 
@@ -40,8 +41,11 @@ const Home = () => {
                     onEnded={handleVideoEnd}
                     />
                 <div className={styles.gradientOverlay} />
-                <div className={styles.navWrapper}>
-                    <MainNav />
+                <div className={styles.topWrapper}>
+                    <TopInfo />
+                    <div className={styles.navWrapper}>
+                        <MainNav />
+                    </div>
                 </div>
                 <div className={styles.content}>
                     <h1 className={styles.slogan}>{t('slogan')}</h1>
@@ -50,12 +54,12 @@ const Home = () => {
             </div>
 
             {/* More content sections below */}
-            <div style={{ padding: '2rem', background: '#fff', color: '#222' }}>
+            {/* <div style={{ padding: '2rem', background: '#fff', color: '#222' }}>
                 <h2>About Our Hotel</h2>
                 <p>
                 Welcome to our hotel! Enjoy your stay with beautiful views and excellent service.
                 </p>
-            </div>
+            </div> */}
             <Services />
             <PetAdvantages />
             <Testimonials />

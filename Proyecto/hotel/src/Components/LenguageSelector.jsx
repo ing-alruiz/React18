@@ -42,7 +42,7 @@ const LanguageSelector = () => {
           padding: '0.3rem',
           borderRadius: '6px',
           cursor: 'pointer',
-          color: 'var(--color-white)', // Inherit text color from parent
+          color: 'inherit', // Inherit text color from parent
           textDecoration: 'none' // Optional: remove underline
         }}
       >

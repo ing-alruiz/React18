@@ -53,5 +53,18 @@
   },
   "testimonials": {
     "error": "Failed to load testimonials"
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "book": "Book Now"
+  },
+  "pages": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "book": "Book Now",
+    "default": "Page"
   }
 }

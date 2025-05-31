@@ -5,12 +5,13 @@
   background: transparent !important;
   height: 100%;
   padding: 0 2vw;
+  color: inherit;
 }
 
 .logoWrapper {
   display: flex;
   align-items: center;
-  height: 100%;
+  height: 90%;
 }
 
 .menu {
@@ -20,7 +21,7 @@
 }
 
 .menuItem {
-  color: var(--color-white, #fff);
+  color: inherit;
   font-weight: 500;
   font-size: 0.8rem;
   padding: 0.5rem 1.2rem;

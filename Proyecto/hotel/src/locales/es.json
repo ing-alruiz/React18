@@ -44,7 +44,7 @@
     },
     "reservationBar": {
         "roomType": "Tipo de habitación",
-        "selectRoomType": "Selecciona tipo de habitación",
+        "selectRoomType": "Tipo de habitación",
         "dates": "¿Cuánto tiempo cuidamos tu mascota?",
         "startDate": "Fecha inicio",
         "endDate": "Fecha fin",
@@ -53,5 +53,24 @@
     },
     "testimonials": {
         "error": "No se pudieron cargar los testimonios"
+    },
+        "nav": {
+        "home": "Inicio",
+        "about": "Acerca de",
+        "contact": "Contacto",
+        "book": "Reservar"
+    },
+    "breadcrumb": {
+        "home": "Inicio",
+        "about": "Acerca de",
+        "contact": "Contacto",
+        "book": "Reservar"
+    },
+    "pages": {
+        "home": "Inicio",
+        "about": "Acerca de",
+        "contact": "Contacto",
+        "book": "Reservar",
+        "default": "Página"
     }
 }

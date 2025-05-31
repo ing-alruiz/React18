@@ -50,9 +50,7 @@ const MainLayout = ({ children }) => {
       <div className={styles.topInfo}>
         <TopInfo />
       </div>
-      <div className={styles.navWrapper}>
-        <MainNav />
-      </div>
+      <MainNav className={styles.navWrapper} />
       <div className={styles.breadcrumbContainer}>
         <h1 style={{ margin: '16px 0', fontSize: 28, color: '#1a284d' }}>{currentPage}</h1>
         <Breadcrumb>{breadcrumbItems}</Breadcrumb>

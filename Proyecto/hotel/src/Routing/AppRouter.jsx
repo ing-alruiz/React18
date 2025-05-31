@@ -9,7 +9,7 @@ import Login from '@Pages/Login';
 import Signup from '@Pages/Signup';
 import PrivacyStatement from '../Pages/PrivacyStatement';
 import Booking from '../Pages/Booking';
-import MainLayout from './MainLayout';
+import MainLayout from '../Layouts/MainLayout';
 
 const LayoutWrapper = () => (
   <MainLayout>

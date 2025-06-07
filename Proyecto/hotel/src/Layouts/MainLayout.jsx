@@ -11,7 +11,7 @@ const breadcrumbKeys = {
   '/': 'breadcrumb.home',
   '/about': 'breadcrumb.about',
   '/contact': 'breadcrumb.contact',
-  '/book': 'breadcrumb.book',
+  '/bookings': 'breadcrumb.book',
   // Add more routes as needed
 };
 
@@ -19,7 +19,7 @@ const pageTitleKeys = {
   '/': 'pages.home',
   '/about': 'pages.about',
   '/contact': 'pages.contact',
-  '/book': 'pages.book',
+  '/bookings': 'pages.book',
   // Add more routes as needed
 };
 

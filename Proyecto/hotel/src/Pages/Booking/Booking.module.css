@@ -1,0 +1,41 @@
+.container {
+  padding: 5vh 10vw;
+  margin: auto;
+}
+
+.steps {
+  margin-bottom: 32px;
+}
+
+.petCounterRow {
+  margin-bottom: 24px;
+  align-items: center;
+}
+
+.petCount {
+  margin: 0 16px;
+  font-size: 18px;
+}
+
+.petLabel {
+  margin-left: 16px;
+}
+
+.datePickerItem {
+  margin-bottom: 24px;
+}
+
+.formalDatePicker :global(.ant-picker) {
+  border-radius: 8px;
+  border: 1.5px solid #bfbfbf;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  font-size: 16px;
+  padding: 6px 12px;
+  background: #fafbfc;
+}
+
+.addPetRow {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}

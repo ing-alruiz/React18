@@ -10,11 +10,24 @@ import Signup from '@Pages/Signup';
 import PrivacyStatement from '../Pages/PrivacyStatement';
 import Booking from '../Pages/Booking';
 import MainLayout from '../Layouts/MainLayout';
+import AdminLayout from '../Layouts/AdminLayout';
+import BookingsPage from '../Pages/Dashboard/Bookins';
+import BookinsNew from '../Pages/Dashboard/Bookins/BookinsNew';
+import BookinsModify from '../Pages/Dashboard/Bookins/BookinsModify';
+import RoomsPage from '../Pages/Dashboard/Rooms';
+import RoomNew from '../Pages/Dashboard/Rooms/RoomNew';
+import RoomModify from '../Pages/Dashboard/Rooms/RoomModify';
 
 const LayoutWrapper = () => (
   <MainLayout>
     <Outlet />
   </MainLayout>
+);
+
+const LayoutAdminWrapper = () => (
+  <AdminLayout>
+    <Outlet />
+  </AdminLayout>
 );
 
 const AppRouter = () => (
@@ -34,15 +47,65 @@ const AppRouter = () => (
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
 
-      {/* Admin route */}
-      <Route
-        path="/dashboard"
-        element={
-          <AdminRoute>
-            <Dashboard />
-          </AdminRoute>
-        }
-      />
+      <Route element={<LayoutAdminWrapper />}>
+        {/* Admin route */}
+        <Route
+          path="/dashboard"
+          element={
+            <AdminRoute>
+              <Dashboard />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/bookings"
+          element={
+            <AdminRoute>
+              <BookingsPage />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/bookings/new"
+          element={
+            <AdminRoute>
+              <BookinsNew />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/bookings/:id"
+          element={
+            <AdminRoute>
+              <BookinsModify />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/rooms"
+          element={
+            <AdminRoute>
+              <RoomsPage />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/rooms/new"
+          element={
+            <AdminRoute>
+              <RoomNew />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/rooms/:id"
+          element={
+            <AdminRoute>
+              <RoomModify />
+            </AdminRoute>
+          }
+        />
+      </Route>
 
     </Routes>
   </Router>

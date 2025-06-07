@@ -72,3 +72,35 @@ export const registerUser = async (userData) => {
     if (!response.ok) throw new Error('Registration failed');
     return await response.json();
 };
+
+// Add updateData for PATCH/PUT requests
+export const updateData = async (endpoint, data, method = 'PATCH') => {
+    const response = await fetch(
+        typeof endpoint === 'string'
+            ? `${apiConfig.baseURL}${endpoint.startsWith('/') ? endpoint : '/' + endpoint}`
+            : `${apiConfig.baseURL}${endpoint.endpoint}`,
+        {
+            method,
+            headers: apiConfig.headers,
+            body: JSON.stringify(data),
+        }
+    );
+    if (!response.ok) throw new Error('Update failed');
+    return await response.json();
+};
+
+// Add this function to handle POST requests (create)
+export async function createData(endpoint, data) {
+    const url = typeof endpoint === 'object' ? endpoint.endpoint : endpoint;
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    });
+    if (!response.ok) {
+        throw new Error('Failed to create data');
+    }
+    return response.json();
+}

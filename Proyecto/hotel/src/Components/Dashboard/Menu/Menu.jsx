@@ -5,60 +5,61 @@ import {
   faUser, faEnvelope, faCalendar, faLock, faHome, faBed, faBuilding, faUsers, faTasks, faAddressBook, faAt, faEllipsisH
 } from '@fortawesome/free-solid-svg-icons';
 import ProfileCard from '../ProfileCard/ProfileCard';
+import { useLocation, Link } from 'react-router-dom';
 
-const Menu = () => (
-  <aside className={styles.sidebar}>
-    <ProfileCard/>
-    <div className={styles.sectionTitle}>-- MAIN</div>
-    <div className={styles.menuItem + ' ' + styles.active}>
-      <FontAwesomeIcon icon={faHome} className={styles.menuIcon} />
-      <span>Home</span>
-    </div>
-    <div className={styles.menuItem}>
-      <FontAwesomeIcon icon={faUser} className={styles.menuIcon} />
-      <span>Booking</span>
-      <span className={styles.plus}>+</span>
-    </div>
-    <div className={styles.menuItem}>
-      <FontAwesomeIcon icon={faBed} className={styles.menuIcon} />
-      <span>Rooms</span>
-      <span className={styles.plus}>+</span>
-    </div>
-    <div className={styles.menuItem}>
-      <FontAwesomeIcon icon={faBuilding} className={styles.menuIcon} />
-      <span>Departments</span>
-      <span className={styles.plus}>+</span>
-    </div>
-    <div className={styles.menuItem}>
-      <FontAwesomeIcon icon={faUsers} className={styles.menuIcon} />
-      <span>Staff</span>
-      <span className={styles.plus}>+</span>
-    </div>
-    <div className={styles.sectionTitle}>-- APPS</div>
-    <div className={styles.menuItem}>
-      <FontAwesomeIcon icon={faCalendar} className={styles.menuIcon} />
-      <span>Calendar</span>
-      <span className={styles.new}>New</span>
-    </div>
-    <div className={styles.menuItem}>
-      <FontAwesomeIcon icon={faTasks} className={styles.menuIcon} />
-      <span>Task</span>
-    </div>
-    <div className={styles.menuItem}>
-      <FontAwesomeIcon icon={faAddressBook} className={styles.menuIcon} />
-      <span>Contacts</span>
-    </div>
-    <div className={styles.menuItem}>
-      <FontAwesomeIcon icon={faAt} className={styles.menuIcon} />
-      <span>Email</span>
-      <span className={styles.badge}>3</span>
-      <span className={styles.plus}>+</span>
-    </div>
-    <div className={styles.menuItem}>
-      <FontAwesomeIcon icon={faEllipsisH} className={styles.menuIcon} />
-      <span>More Apps</span>
-    </div>
-  </aside>
-);
+const menuItems = [
+  { key: '/dashboard', icon: faHome, label: 'Home' },
+  { key: '/dashboard/bookings', icon: faUser, label: 'Booking', plus: true },
+  { key: '/dashboard/rooms', icon: faBed, label: 'Rooms', plus: true },
+  { key: '/dashboard/departments', icon: faBuilding, label: 'Departments', plus: true },
+  { key: '/dashboard/staff', icon: faUsers, label: 'Staff', plus: true },
+];
+
+const appItems = [
+  { key: '/dashboard/calendar', icon: faCalendar, label: 'Calendar', new: true },
+  { key: '/dashboard/task', icon: faTasks, label: 'Task' },
+  { key: '/dashboard/contacts', icon: faAddressBook, label: 'Contacts' },
+  { key: '/dashboard/email', icon: faAt, label: 'Email', badge: 3, plus: true },
+  { key: '/dashboard/more', icon: faEllipsisH, label: 'More Apps' },
+];
+
+const Menu = () => {
+  const location = useLocation();
+  // Find the base path for highlighting (e.g., '/dashboard/booking/123' -> '/dashboard/booking')
+  const currentPath = location.pathname;
+  // Helper to determine if a menu item is active
+  const isActive = (key) => {
+    if (key === '/') return currentPath === '/' || currentPath === '/dashboard';
+    return currentPath.startsWith(key);
+  };
+
+  return (
+    <aside className={styles.sidebar}>
+      <ProfileCard/>
+      <div className={styles.sectionTitle}>-- MAIN</div>
+      {menuItems.map(item => (
+        <Link to={item.key} key={item.key} style={{ textDecoration: 'none' }}>
+          <div className={`${styles.menuItem} ${isActive(item.key) ? styles.active : ''}`}>
+            <FontAwesomeIcon icon={item.icon} className={styles.menuIcon} />
+            <span>{item.label}</span>
+            {item.plus && <span className={styles.plus}>+</span>}
+          </div>
+        </Link>
+      ))}
+      <div className={styles.sectionTitle}>-- APPS</div>
+      {appItems.map(item => (
+        <Link to={item.key} key={item.key} style={{ textDecoration: 'none' }}>
+          <div className={`${styles.menuItem} ${isActive(item.key) ? styles.active : ''}`}>
+            <FontAwesomeIcon icon={item.icon} className={styles.menuIcon} />
+            <span>{item.label}</span>
+            {item.new && <span className={styles.new}>New</span>}
+            {item.badge && <span className={styles.badge}>{item.badge}</span>}
+            {item.plus && <span className={styles.plus}>+</span>}
+          </div>
+        </Link>
+      ))}
+    </aside>
+  );
+};
 
 export default Menu;

@@ -8,8 +8,8 @@
             "url": "http://localhost:5173/",
             "webRoot": "${workspaceFolder}",
             "sourceMapPathOverrides": {
-                "webpack:///src/*": "${webRoot}/Semana7/proyecto/hotel/src/*",
-                "/src/*": "${webRoot}/Semana7/proyecto/hotel/src/*"
+                "webpack:///src/*": "${webRoot}/Proyecto/hotel/src/*",
+                "/src/*": "${webRoot}/Proyecto/hotel/src/*"
             }
         }
     ]

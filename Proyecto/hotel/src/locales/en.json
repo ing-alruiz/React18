@@ -12,7 +12,9 @@
     "gallery": "Gallery",
     "dashboard": "Dashboard",
     "book": "Book",
-    "miBook": "My Bookings"
+    "miBook": "My Bookings",
+    "login": "Log In",
+    "logout": "Log Out"
   },
   "footer": {
     "hotelName": "Hotel Mascotas Nobles",
@@ -66,5 +68,50 @@
     "contact": "Contact",
     "book": "Book Now",
     "default": "Page"
+  },
+  "booking": {
+    "steps": {
+      "petDetails": "Pet Details",
+      "selectRooms": "Select Room(s)",
+      "confirmPay": "Confirmation & Payment"
+    },
+    "petLabel": "Pet(s)",
+    "dates": "Dates",
+    "validation": {
+      "dates": "Please select reservation dates"
+    },
+    "startDate": "Start date",
+    "endDate": "End date",
+    "pet": "Pet",
+    "delete": "Delete",
+    "petType": "Pet Type",
+    "selectType": "Select type",
+    "petTypes": {
+      "dog": "Dog",
+      "cat": "Cat",
+      "rabbit": "Rabbit",
+      "other": "Other"
+    },
+    "petName": "Pet's Name",
+    "breed": "Breed",
+    "allergies": "Allergies",
+    "allergiesPlaceholder": "e.g. None",
+    "height": "Height (cm)",
+    "weight": "Weight (kg)",
+    "optional": "Optional",
+    "addAnotherPet": "Add Another Pet",
+    "selectRoomFor": "Select Room for",
+    "summary": "Booking Summary",
+    "to": "to",
+    "type": "Type",
+    "none": "None",
+    "na": "N/A",
+    "room": "Room",
+    "ownerInfo": "Owner Information",
+    "ownerName": "Owner Name",
+    "ownerContact": "Owner Contact",
+    "confirmPay": "Confirm & Pay",
+    "back": "Back",
+    "next": "Next"
   }
 }

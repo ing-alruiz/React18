@@ -253,6 +253,12 @@
       "name": "beto2",
       "email": "golas@isd.com",
       "password": "e95eef675e2cbbe6ea7e61dc3d7b6c5767b44a1704a02c6109e6f8668d8afa8e"
+    },
+    {
+      "id": "a112",
+      "name": "beto",
+      "email": "adsasd@adsasd.com",
+      "password": "b7459304c09640e31a2bae97c6371d69a99db97a234563dbbb460751543e2ace"
     }
   ],
   "usersTypes": [

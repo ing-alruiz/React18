@@ -12,7 +12,9 @@
         "gallery": "Galería",
         "dashboard": "Tablero",
         "book": "Reservar",
-        "miBook": "Mis Reservas"
+        "miBook": "Mis Reservas",
+        "login": "Iniciar sesión",
+        "logout": "Cerrar sesión"
     },
     "footer": {
         "hotelName": "Hotel Mascotas Nobles",
@@ -72,5 +74,50 @@
         "contact": "Contacto",
         "book": "Reservar",
         "default": "Página"
+    },
+    "booking": {
+        "steps": {
+            "petDetails": "Detalles de la Mascota",
+            "selectRooms": "Seleccionar Habitación(es)",
+            "confirmPay": "Confirmación y Pago"
+        },
+        "petLabel": "Mascota(s)",
+        "dates": "Fechas",
+        "validation": {
+            "dates": "Por favor selecciona las fechas de reserva"
+        },
+        "startDate": "Fecha de inicio",
+        "endDate": "Fecha de fin",
+        "pet": "Mascota",
+        "delete": "Eliminar",
+        "petType": "Tipo de Mascota",
+        "selectType": "Selecciona tipo",
+        "petTypes": {
+            "dog": "Perro",
+            "cat": "Gato",
+            "rabbit": "Conejo",
+            "other": "Otro"
+        },
+        "petName": "Nombre de la Mascota",
+        "breed": "Raza",
+        "allergies": "Alergias",
+        "allergiesPlaceholder": "ej. Ninguna",
+        "height": "Altura (cm)",
+        "weight": "Peso (kg)",
+        "optional": "Opcional",
+        "addAnotherPet": "Agregar otra mascota",
+        "selectRoomFor": "Seleccionar habitación para",
+        "summary": "Resumen de Reserva",
+        "to": "a",
+        "type": "Tipo",
+        "none": "Ninguna",
+        "na": "N/D",
+        "room": "Habitación",
+        "ownerInfo": "Información del Dueño",
+        "ownerName": "Nombre del Dueño",
+        "ownerContact": "Contacto del Dueño",
+        "confirmPay": "Confirmar y Pagar",
+        "back": "Atrás",
+        "next": "Siguiente"
     }
 }

@@ -6,7 +6,7 @@ import NotFound from '../Pages/NotFound';
 import Dashboard from '../Pages/Dashboard/Home';
 import AdminRoute from './AdminRoute';
 import Login from '../Pages/Login';
-import Signup from '../Pages/Signup';
+import Signup from '../Pages/SignUp'; // <-- Fixed import path
 import PrivacyStatement from '../Pages/PrivacyStatement';
 import Booking from '../Pages/Booking';
 import MainLayout from '../Layouts/MainLayout';

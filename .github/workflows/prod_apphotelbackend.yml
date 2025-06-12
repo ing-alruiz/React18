@@ -61,7 +61,9 @@ jobs:
         run: unzip release.zip
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd Semana7/jsonserver
+          npm install
 
       - name: Login to Azure
         uses: azure/login@v2
@@ -76,4 +78,4 @@ jobs:
         with:
           app-name: 'AppHotelBackend'
           slot-name: 'Production'
-          package: .
+          package: Semana7/jsonserver

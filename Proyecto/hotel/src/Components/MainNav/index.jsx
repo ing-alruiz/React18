@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styles from './MainNav.module.css';
-import MainLogo from '@Components/Logo/MainLogo';
+import MainLogo from '../Logo/MainLogo';
 import LanguageSelector from '../LenguageSelector';
-import { useAuth } from '@Contexts/Auth/AuthContext.jsx';
+import { useAuth } from '../../Contexts/Auth/AuthContext.jsx';
 
 const MainNav = ({ className = '', ...props }) => {
   const { t } = useTranslation();

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Footer.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { fetchData } from '@Api/apiService';
-import apiEndpoints from '@Api/apiEndpoints';
+import { fetchData } from '../../Api/apiService';
+import apiEndpoints from '../../Api/apiEndpoints';
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {

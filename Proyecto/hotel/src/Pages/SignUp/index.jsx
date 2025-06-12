@@ -3,7 +3,7 @@ import { Form, Input, Button, Typography, Row, Col, Card, message } from 'antd';
 import { UserOutlined, MailOutlined, LockOutlined } from '@ant-design/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useNavigate } from 'react-router-dom';
-import { registerUser } from '@Api/apiService';
+import { registerUser } from '../../Api/apiService';
 import Password from 'antd/es/input/Password';
 
 const { Title, Text } = Typography;

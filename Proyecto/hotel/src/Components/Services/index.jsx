@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Spin, Alert, Row, Col } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { fetchData } from '@Api/apiService';
-import apiEndpoints from '@Api/apiEndpoints';
+import { fetchData } from '../../Api/apiService';
+import apiEndpoints from '../../Api/apiEndpoints';
 import styles from './Services.module.css';
 import { useTranslation } from 'react-i18next';
 

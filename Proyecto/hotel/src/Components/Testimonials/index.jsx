@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Rate, Spin, Alert } from 'antd';
-import { fetchData } from '@Api/apiService';
-import apiEndpoints from '@Api/apiEndpoints';
+import { fetchData } from '../../Api/apiService';
+import apiEndpoints from '../../Api/apiEndpoints';
 import { useTranslation } from 'react-i18next';
 
 const Testimonials = () => {

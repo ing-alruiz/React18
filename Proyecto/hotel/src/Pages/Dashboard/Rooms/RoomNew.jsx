@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Form, Input, InputNumber, Button, Card, message, Select } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import { createData } from '@Api/apiService';
-import apiEndpoints from '@Api/apiEndpoints';
+import { createData } from '../../../Api/apiService';
+import apiEndpoints from '../../../Api/apiEndpoints';
 
 const RoomNew = () => {
   const [loading, setLoading] = useState(false);

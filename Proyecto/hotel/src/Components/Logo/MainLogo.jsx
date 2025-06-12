@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './MainLogo.module.css';
-import logoPerrito from '@Images/logo/logoPerrito.png';
+import logoPerrito from '../../assets/images/logo/logoPerrito.png';
 
 const MainLogo = () => {
   return (

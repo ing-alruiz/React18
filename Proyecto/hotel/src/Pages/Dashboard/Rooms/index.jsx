@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Table, Button, Popconfirm, message, Tag, Space } from 'antd';
 import { PlusOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
-import { fetchData, updateData } from '@Api/apiService';
-import apiEndpoints from '@Api/apiEndpoints';
+import { fetchData, updateData } from '../../../Api/apiService';
+import apiEndpoints from '../../../Api/apiEndpoints';
 
 const ROOMS_ENDPOINT = apiEndpoints.roomTypes || '/roomTypes';
 

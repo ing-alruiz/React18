@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Button, Breadcrumb } from 'antd';
 import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Menu from '@Components/Dashboard/Menu/Menu';
+import Menu from '../Components/Dashboard/Menu/Menu';
 
 const breadcrumbNameMap = {
   '/': 'Dashboard',

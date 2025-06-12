@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Input, Button, Checkbox, Typography, Row, Col, Card } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { useAuth } from '@Contexts/Auth/AuthContext.jsx'; 
+import { useAuth } from '../../Contexts/Auth/AuthContext.jsx'; 
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 

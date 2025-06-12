@@ -1,6 +1,6 @@
 import React from 'react';
-import MainNav from '@Components/MainNav';
-import Footer from '@Components/Footer';
+import MainNav from '../Components/MainNav';
+import Footer from '../Components/Footer';
 import styles from './MainLayout.module.css'; 
 import TopInfo from '../Components/MainNav/TopInfo';
 import { Breadcrumb } from 'antd';

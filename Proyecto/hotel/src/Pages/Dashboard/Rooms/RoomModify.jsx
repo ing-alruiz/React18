@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Form, Input, InputNumber, Button, Card, message, Spin } from 'antd';
 import { useParams, useNavigate } from 'react-router-dom';
-import { fetchData, updateData } from '@Api/apiService';
-import apiEndpoints from '@Api/apiEndpoints';
+import { fetchData, updateData } from '../../../Api/apiService';
+import apiEndpoints from '../../../Api/apiEndpoints';
 
 const RoomModify = () => {
   const { id } = useParams();

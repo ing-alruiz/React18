@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Form, Input, Button, DatePicker, Select, message, Card } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import { fetchData } from '@Api/apiService';
-import apiEndpoints from '@Api/apiEndpoints';
+import { fetchData } from '../../../Api/apiService';
+import apiEndpoints from '../../../Api/apiEndpoints';
 
 const { RangePicker } = DatePicker;
 

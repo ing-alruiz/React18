@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faUser, faEnvelope, faCalendar, faLock
 } from '@fortawesome/free-solid-svg-icons';
-import { useAuth } from '@Contexts/Auth/AuthContext.jsx';
+import { useAuth } from '../../../Contexts/Auth/AuthContext.jsx';
 
 const ProfileCard = () => {
   const { user } = useAuth();

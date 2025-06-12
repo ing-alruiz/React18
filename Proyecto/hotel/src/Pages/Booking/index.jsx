@@ -1,8 +1,8 @@
 import { Steps, Button, Form, Input, DatePicker, List, Card, Image, message, Row, Col } from 'antd';
 import { PlusOutlined, MinusOutlined, DeleteOutlined } from '@ant-design/icons';
 import { useState, useEffect } from 'react';
-import { fetchData } from '@Api/apiService';
-import apiEndpoints from '@Api/apiEndpoints';
+import { fetchData } from '../../Api/apiService';
+import apiEndpoints from '../../Api/apiEndpoints';
 import { useNavigate, useLocation } from 'react-router-dom';
 import styles from './Booking.module.css';
 import dayjs from 'dayjs';

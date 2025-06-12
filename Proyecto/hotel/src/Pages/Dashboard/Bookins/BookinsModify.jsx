@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Form, Input, Button, DatePicker, Select, message, Card, Spin } from 'antd';
-import { fetchData, updateData } from '@Api/apiService';
-import apiEndpoints from '@Api/apiEndpoints';
+import { fetchData, updateData } from '../../../Api/apiService';
+import apiEndpoints from '../../../Api/apiEndpoints';
 import dayjs from 'dayjs';
 
 const { RangePicker } = DatePicker;

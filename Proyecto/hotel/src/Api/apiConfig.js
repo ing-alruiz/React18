@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:4000';
+const API_BASE_URL = 'https://apphotelbackend-d6a2h4gcghbsb5en.centralus-01.azurewebsites.net/';
 
 const apiConfig = {
     baseURL: API_BASE_URL,

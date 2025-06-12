@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --watch db.json --port 3000",
-    "start:server": "json-server --watch db.json --port 3001",
+    "start": "json-server --watch db.json --port $PORT",
     "build": "echo No build step necessary",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,9 +13,7 @@
   "description": "",
   "dependencies": {
     "express": "^5.1.0",
-    "swagger-ui-express": "^5.0.1"
-  },
-  "devDependencies": {
+    "swagger-ui-express": "^5.0.1",
     "json-server": "^1.0.0-beta.3"
   }
 }

@@ -31,6 +31,26 @@ const apiEndpoints = {
         endpoint: '/users',
         method: 'GET',
     },
+    pets: {
+        endpoint: '/pets',
+        method: 'GET',
+    },
+    userPets: (userId) => ({
+        endpoint: `/pets?userId=${userId}`,
+        method: 'GET',
+    }),
+    pet: (id) => ({
+        endpoint: `/pets/${id}`,
+        method: 'PATCH',
+    }),
+    userReservations: (userId) => ({
+        endpoint: `/reservations?userId=${userId}`,
+        method: 'GET',
+    }),
+    user: (id) => ({
+        endpoint: `/users/${id}`,
+        method: 'PATCH',
+    }),
 };
 
 export default apiEndpoints;

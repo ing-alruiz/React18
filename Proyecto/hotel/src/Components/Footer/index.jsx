@@ -65,9 +65,9 @@ const Footer = () => {
         <div className={styles.column}>
           <div className={styles.colTitle}>{t('footer.services')}</div>
           <ul>
-            {services.map(({ id, title_en, title_es, link }) => (
+            {services.map(({ id, title_en, title_es }) => (
               <li key={id}>
-                <a href={link || '#'} target="_blank" rel="noopener noreferrer">
+                <a href={`/services/${id}`}>
                   {lang === 'es' ? title_es : title_en}
                 </a>
               </li>
@@ -88,6 +88,7 @@ const Footer = () => {
         <a href="/privacy" className={styles.footerLink}>{t('footer.privacy')}</a>
         <a href="/terms" className={styles.footerLink}>{t('footer.terms')}</a>
         <a href="/cookies" className={styles.footerLink}>{t('footer.cookies')}</a>
+        <a href="/faq" className={styles.footerLink}>FAQ</a>
       </div>
     </footer>
   );

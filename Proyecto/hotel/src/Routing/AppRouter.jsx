@@ -17,6 +17,16 @@ import BookinsModify from '../Pages/Dashboard/Bookins/BookinsModify';
 import RoomsPage from '../Pages/Dashboard/Rooms';
 import RoomNew from '../Pages/Dashboard/Rooms/RoomNew';
 import RoomModify from '../Pages/Dashboard/Rooms/RoomModify';
+import ServicesPage from '../Pages/Services';
+import ServiceDetail from '../Pages/Services/ServiceDetail';
+import Gallery from '../Pages/Gallery';
+import AccountLayout from '../Pages/Account';
+import Profile from '../Pages/Account/Profile';
+import Pets from '../Pages/Account/Pets';
+import Reservations from '../Pages/Account/Reservations';
+import FAQ from '../Pages/FAQ';
+import Terms from '../Pages/Terms';
+import Cookies from '../Pages/Cookies';
 
 const LayoutWrapper = () => (
   <MainLayout>
@@ -39,6 +49,17 @@ const AppRouter = () => (
         <Route path="/about" element={<About />} />
         <Route path="/book" element={<Booking />} />
         <Route path="/privacy" element={<PrivacyStatement />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/services/:id" element={<ServiceDetail />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/account" element={<AccountLayout />}>
+          <Route path="profile" element={<Profile />} />
+          <Route path="pets" element={<Pets />} />
+          <Route path="reservations" element={<Reservations />} />
+        </Route>
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/cookies" element={<Cookies />} />
         {/* 404 */}
         <Route path="*" element={<NotFound />} />
       </Route>

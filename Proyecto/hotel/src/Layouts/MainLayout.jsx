@@ -12,6 +12,14 @@ const breadcrumbKeys = {
   '/about': 'breadcrumb.about',
   '/contact': 'breadcrumb.contact',
   '/bookings': 'breadcrumb.book',
+  '/book': 'breadcrumb.book',
+  '/services': 'breadcrumb.services',
+  '/gallery': 'breadcrumb.gallery',
+  '/privacy': 'breadcrumb.privacy',
+  '/faq': 'breadcrumb.faq',
+  '/terms': 'breadcrumb.terms',
+  '/cookies': 'breadcrumb.cookies',
+  '/account': 'breadcrumb.account',
   // Add more routes as needed
 };
 
@@ -20,6 +28,14 @@ const pageTitleKeys = {
   '/about': 'pages.about',
   '/contact': 'pages.contact',
   '/bookings': 'pages.book',
+  '/book': 'pages.book',
+  '/services': 'pages.services',
+  '/gallery': 'pages.gallery',
+  '/privacy': 'pages.privacy',
+  '/faq': 'pages.faq',
+  '/terms': 'pages.terms',
+  '/cookies': 'pages.cookies',
+  '/account': 'pages.account',
   // Add more routes as needed
 };
 
@@ -47,13 +63,15 @@ const MainLayout = ({ children }) => {
 
   return (
     <>
-      <div className={styles.topInfo}>
-        <TopInfo />
-      </div>
-      <MainNav className={styles.navWrapper} />
-      <div className={styles.breadcrumbContainer}>
-        <h1 style={{ margin: '16px 0', fontSize: 28, color: '#1a284d' }}>{currentPage}</h1>
-        <Breadcrumb>{breadcrumbItems}</Breadcrumb>
+      <div className={styles.backgroundImage}>
+        <div className={styles.topInfo}>
+          <TopInfo />
+        </div>
+        <MainNav className={styles.navWrapper} />
+        <div className={styles.breadcrumbContainer}>
+          <h1 style={{ margin: '16px 0', fontSize: 28, color: '#1a284d' }}>{currentPage}</h1>
+          <Breadcrumb>{breadcrumbItems}</Breadcrumb>
+        </div>
       </div>
       <main className={styles.content}>{children}</main>
       <Footer />

@@ -1,0 +1,214 @@
+.aboutPage {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: var(--color-primary);
+    background: var(--background-color-white);
+}
+
+.parallaxHero {
+    position: relative;
+    height: 340px;
+    background-image: url('https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=80');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heroOverlay {
+    background: rgba(0, 0, 0, 0.247);
+    padding: 48px 32px;
+    border-radius: 16px;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.heroTitle {
+    font-size: 48px;
+    margin-bottom: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--color-accent);
+}
+
+.heroSubtitle {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--color-primary);
+}
+
+.aboutSection {
+    padding: 56px 0 32px 0;
+    background: var(--color-white);
+}
+
+.aboutContent {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.aboutImage {
+    width: 340px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(19,47,76,0.10);
+    object-fit: cover;
+}
+
+.aboutText {
+    flex: 1;
+    min-width: 260px;
+}
+
+.aboutText h2 {
+    font-size: 32px;
+    margin-bottom: 16px;
+    color: var(--color-primary);
+}
+
+.aboutText p {
+    font-size: 18px;
+    color: var(--color-text);
+    margin-bottom: 18px;
+}
+
+.featuresList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.featuresList li {
+    margin-bottom: 12px;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    color: var(--color-primary);
+}
+
+.icon {
+    color: var(--color-accent);
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.parallaxDivider {
+    position: relative;
+    height: 220px;
+    background-image: url('https://images.unsplash.com/photo-1518715308788-3005759c61e9?auto=format&fit=crop&w=1200&q=80');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dividerOverlay {
+    background: rgba(19, 47, 76, 0.6);
+    padding: 32px 48px;
+    border-radius: 12px;
+    color: var(--color-white);
+    text-align: center;
+}
+
+.dividerOverlay h2 {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--color-accent);
+}
+
+.amenitiesSection {
+    padding: 48px 0;
+    background: var(--background-color-white);
+    text-align: center;
+}
+
+.amenitiesSection h2 {
+    font-size: 32px;
+    margin-bottom: 32px;
+    color: var(--color-primary);
+}
+
+.amenitiesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.amenityCard {
+    background: var(--color-white);
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(19,47,76,0.07);
+    padding: 32px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s;
+}
+
+.amenityCard:hover {
+    box-shadow: 0 6px 24px rgba(19,47,76,0.13);
+}
+
+.amenityIcon {
+    font-size: 36px;
+    color: var(--color-accent);
+    margin-bottom: 16px;
+}
+
+.amenityCard h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--color-primary);
+}
+
+.amenityCard p {
+    font-size: 15px;
+    color: var(--color-text);
+}
+
+.contactSection {
+    padding: 48px 0 56px 0;
+    background: var(--color-white);
+    text-align: center;
+}
+
+.contactSection h2 {
+    font-size: 30px;
+    margin-bottom: 24px;
+    color: var(--color-primary);
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+    font-size: 18px;
+}
+
+.contactIcon {
+    color: var(--color-accent);
+    margin-right: 10px;
+    font-size: 22px;
+}
+
+@media (max-width: 900px) {
+    .aboutContent {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+    }
+    .aboutImage {
+        width: 90vw;
+        max-width: 340px;
+    }
+}

@@ -14,7 +14,8 @@
     "book": "Book",
     "miBook": "My Bookings",
     "login": "Log In",
-    "logout": "Log Out"
+    "logout": "Log Out",
+    "account": "Account"
   },
   "footer": {
     "hotelName": "Hotel Mascotas Nobles",
@@ -60,14 +61,28 @@
     "home": "Home",
     "about": "About",
     "contact": "Contact",
-    "book": "Book Now"
+    "book": "Book",
+    "services": "Services",
+    "gallery": "Gallery",
+    "privacy": "Privacy",
+    "faq": "FAQ",
+    "terms": "Terms",
+    "cookies": "Cookies",
+    "account": "Account"
   },
   "pages": {
     "home": "Home",
-    "about": "About",
+    "about": "About Us",
     "contact": "Contact",
-    "book": "Book Now",
-    "default": "Page"
+    "book": "Book",
+    "services": "Our Services",
+    "gallery": "Gallery",
+    "privacy": "Privacy Statement",
+    "faq": "Frequently Asked Questions",
+    "terms": "Terms and Conditions",
+    "cookies": "Cookies Policy",
+    "account": "My Account",
+    "default": ""
   },
   "booking": {
     "steps": {
@@ -113,5 +128,55 @@
     "confirmPay": "Confirm & Pay",
     "back": "Back",
     "next": "Next"
+  },
+  "privacy": {
+    "intro": "At Hotel Mascotas Nobles, we are committed to protecting your privacy and the security of your personal information. This Privacy Statement explains how we collect, use, and safeguard your data when you use our services or visit our website.",
+    "collectTitle": "Information We Collect",
+    "collect1": "Personal details such as your name, contact information, and pet information when you make a reservation or register with us.",
+    "collect2": "Payment and billing information for processing your bookings.",
+    "collect3": "Information about your interactions with our website and services.",
+    "useTitle": "How We Use Your Information",
+    "use1": "To manage reservations and provide our hotel and pet care services.",
+    "use2": "To communicate with you about your bookings, promotions, or important updates.",
+    "use3": "To improve our services and personalize your experience.",
+    "use4": "To comply with legal obligations and ensure the safety of our guests and pets.",
+    "protectTitle": "Data Protection",
+    "protect": "We implement appropriate security measures to protect your data from unauthorized access, alteration, or disclosure. Your information is only accessible to authorized staff and is never sold to third parties.",
+    "rightsTitle": "Your Rights",
+    "rights": "You have the right to access, correct, or delete your personal information. To exercise these rights or if you have any questions about our privacy practices, please contact us at ",
+    "updatesTitle": "Updates to This Policy",
+    "updates": "We may update this Privacy Statement from time to time. Any changes will be posted on this page with the updated date.",
+    "lastUpdated": "Last updated: May 2025"
+  },
+  "account": {
+    "profile": "Profile",
+    "pets": "My Pets",
+    "reservations": "My Reservations",
+    "editProfile": "Edit Profile",
+    "name": "Name",
+    "email": "Email",
+    "saveChanges": "Save Changes",
+    "profileUpdated": "Profile updated!",
+    "profileUpdateError": "Failed to update profile",
+    "myPets": "My Pets",
+    "addPet": "Add Pet",
+    "edit": "Edit",
+    "editPet": "Edit Pet",
+    "petName": "Name",
+    "petType": "Type",
+    "petBreed": "Breed",
+    "cancel": "Cancel",
+    "save": "Save",
+    "petUpdated": "Pet updated!",
+    "petAdded": "Pet added!",
+    "petSaveError": "Failed to save pet",
+    "petsLoadError": "Failed to load pets",
+    "myReservations": "My Reservations",
+    "createReservation": "Create Reservation",
+    "reservation": "Reservation",
+    "pet": "Pet",
+    "room": "Room",
+    "date": "Date",
+    "reservationsLoadError": "Failed to load reservations"
   }
 }

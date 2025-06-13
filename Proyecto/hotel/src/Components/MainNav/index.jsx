@@ -40,6 +40,12 @@ const MainNav = ({ className = '', ...props }) => {
           <div className={styles.menuItem + ' ' + (selectedKey === '/book' ? styles.selected : '')}>
             <Link to="/book" className={styles.menuLink}>{t('menu.book')}</Link>
           </div>
+          <div className={styles.menuItem + ' ' + (selectedKey === '/services' ? styles.selected : '')}>
+            <Link to="/services" className={styles.menuLink}>{t('menu.services') || 'Services'}</Link>
+          </div>
+          <div className={styles.menuItem + ' ' + (selectedKey === '/gallery' ? styles.selected : '')}>
+            <Link to="/gallery" className={styles.menuLink}>{t('menu.gallery') || 'Gallery'}</Link>
+          </div>
           <LanguageSelector/>
         </div>
         <div className={styles.bottomMenu}>
@@ -50,6 +56,9 @@ const MainNav = ({ className = '', ...props }) => {
             </div>
           ) : (
             <>
+              <div className={styles.menuItem + ' ' + (selectedKey.startsWith('/account') ? styles.selected : '')}>
+                <Link to="/account/profile" className={styles.menuLink}>{t('menu.account') || 'Account'}</Link>
+              </div>
               <div className={styles.menuItem}>
                 <Link to="/dashboard" className={styles.menuLink}>{t('menu.dashboard') || 'Dashboard'}</Link>
               </div>

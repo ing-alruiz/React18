@@ -1,0 +1,56 @@
+.accountPage {
+  display: flex;
+  min-height: 70vh;
+  background: #f8f8f8;
+}
+
+.sidebar {
+  width: 220px;
+  background: #fff;
+  border-right: 1px solid #eee;
+  padding: 32px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0 0 24px 32px;
+  color: #1a284d;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sidebar a {
+  padding: 12px 32px;
+  color: #222;
+  text-decoration: none;
+  font-size: 1.05rem;
+  border-left: 4px solid transparent;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background: #f0f4fa;
+  border-left: 4px solid #D4AF37;
+  color: #1a284d;
+}
+
+.active {
+  background: #f0f4fa;
+  border-left: 4px solid #D4AF37;
+  color: #1a284d;
+}
+
+.content {
+  flex: 1;
+  padding: 40px 32px;
+  min-width: 0;
+}

@@ -14,7 +14,8 @@
         "book": "Reservar",
         "miBook": "Mis Reservas",
         "login": "Iniciar sesión",
-        "logout": "Cerrar sesión"
+        "logout": "Cerrar sesión",
+        "account": "Cuenta"
     },
     "footer": {
         "hotelName": "Hotel Mascotas Nobles",
@@ -66,14 +67,28 @@
         "home": "Inicio",
         "about": "Acerca de",
         "contact": "Contacto",
-        "book": "Reservar"
+        "book": "Reservar",
+        "services": "Servicios",
+        "gallery": "Galería",
+        "privacy": "Privacidad",
+        "faq": "Preguntas Frecuentes",
+        "terms": "Términos",
+        "cookies": "Cookies",
+        "account": "Cuenta"
     },
     "pages": {
         "home": "Inicio",
-        "about": "Acerca de",
+        "about": "Sobre Nosotros",
         "contact": "Contacto",
         "book": "Reservar",
-        "default": "Página"
+        "services": "Nuestros Servicios",
+        "gallery": "Galería",
+        "privacy": "Política de Privacidad",
+        "faq": "Preguntas Frecuentes",
+        "terms": "Términos y Condiciones",
+        "cookies": "Política de Cookies",
+        "account": "Mi Cuenta",
+        "default": ""
     },
     "booking": {
         "steps": {
@@ -119,5 +134,55 @@
         "confirmPay": "Confirmar y Pagar",
         "back": "Atrás",
         "next": "Siguiente"
+    },
+    "privacy": {
+        "intro": "En Hotel Mascotas Nobles, estamos comprometidos con la protección de tu privacidad y la seguridad de tu información personal. Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos tus datos cuando utilizas nuestros servicios o visitas nuestro sitio web.",
+        "collectTitle": "Información que Recopilamos",
+        "collect1": "Datos personales como nombre, información de contacto e información de tu mascota al hacer una reserva o registrarte.",
+        "collect2": "Información de pago y facturación para procesar tus reservas.",
+        "collect3": "Información sobre tus interacciones con nuestro sitio web y servicios.",
+        "useTitle": "Cómo Usamos tu Información",
+        "use1": "Para gestionar reservas y brindar nuestros servicios de hotel y cuidado de mascotas.",
+        "use2": "Para comunicarnos contigo sobre tus reservas, promociones o actualizaciones importantes.",
+        "use3": "Para mejorar nuestros servicios y personalizar tu experiencia.",
+        "use4": "Para cumplir con obligaciones legales y garantizar la seguridad de nuestros huéspedes y mascotas.",
+        "protectTitle": "Protección de Datos",
+        "protect": "Implementamos medidas de seguridad apropiadas para proteger tus datos contra accesos no autorizados, alteraciones o divulgaciones. Tu información solo es accesible para personal autorizado y nunca se vende a terceros.",
+        "rightsTitle": "Tus Derechos",
+        "rights": "Tienes derecho a acceder, corregir o eliminar tu información personal. Para ejercer estos derechos o si tienes preguntas sobre nuestras prácticas de privacidad, contáctanos en ",
+        "updatesTitle": "Actualizaciones de Esta Política",
+        "updates": "Podemos actualizar esta Política de Privacidad ocasionalmente. Cualquier cambio se publicará en esta página con la fecha actualizada.",
+        "lastUpdated": "Última actualización: Mayo 2025"
+    },
+    "account": {
+        "profile": "Perfil",
+        "pets": "Mis Mascotas",
+        "reservations": "Mis Reservas",
+        "editProfile": "Editar Perfil",
+        "name": "Nombre",
+        "email": "Correo electrónico",
+        "saveChanges": "Guardar Cambios",
+        "profileUpdated": "¡Perfil actualizado!",
+        "profileUpdateError": "Error al actualizar el perfil",
+        "myPets": "Mis Mascotas",
+        "addPet": "Agregar Mascota",
+        "edit": "Editar",
+        "editPet": "Editar Mascota",
+        "petName": "Nombre",
+        "petType": "Tipo",
+        "petBreed": "Raza",
+        "cancel": "Cancelar",
+        "save": "Guardar",
+        "petUpdated": "¡Mascota actualizada!",
+        "petAdded": "¡Mascota agregada!",
+        "petSaveError": "Error al guardar la mascota",
+        "petsLoadError": "Error al cargar mascotas",
+        "myReservations": "Mis Reservas",
+        "createReservation": "Crear Reserva",
+        "reservation": "Reserva",
+        "pet": "Mascota",
+        "room": "Habitación",
+        "date": "Fecha",
+        "reservationsLoadError": "Error al cargar reservas"
     }
 }

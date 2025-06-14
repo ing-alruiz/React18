@@ -22,9 +22,11 @@ const ReservationBar = ({ className }) => {
   };
 
   const handleSearch = () => {
-    console.log('Searching with:', { guests, dates });
+    // Expecting dates as [moment, moment]
+    const from = dates && dates[0] ? dates[0].format('YYYY-MM-DD') : '';
+    const to = dates && dates[1] ? dates[1].format('YYYY-MM-DD') : '';
     navigate(
-      `/book?guests=${guests}&dates=${encodeURIComponent(dates)}`
+      `/book?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}&mascots=${guests}`
     );
   };
 

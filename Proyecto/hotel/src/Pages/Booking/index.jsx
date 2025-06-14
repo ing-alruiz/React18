@@ -48,13 +48,24 @@ const DogRoomBooking = () => {
   const [showAddPet, setShowAddPet] = useState(false);
   const [newPet, setNewPet] = useState(emptyPet());
   const [addingPet, setAddingPet] = useState(false);
+  const [showFieldError, setShowFieldError] = useState(false);
 
   // Parse query params for dates and guests
   useEffect(() => {
     const params = new URLSearchParams(location.search);
+    // Support both old and new params for backward compatibility
+    const from = params.get('from');
+    const to = params.get('to');
+    const mascots = params.get('mascots');
     const datesParam = decodeURIComponent(params.get('dates') || '');
     const guestsParam = params.get('guests');
-    if (datesParam) {
+
+    if (from && to) {
+      setDates([
+        dayjs(decodeURIComponent(from)),
+        dayjs(decodeURIComponent(to))
+      ]);
+    } else if (datesParam) {
       const [start, end] = datesParam.split(',');
       if (start && end) {
         setDates([
@@ -63,7 +74,14 @@ const DogRoomBooking = () => {
         ]);
       }
     }
-    if (guestsParam) {
+
+    if (mascots) {
+      const mascotsNum = parseInt(mascots, 10);
+      if (mascotsNum > 0) {
+        setPets(Array.from({ length: mascotsNum }, emptyPet));
+        setPetRooms(Array.from({ length: mascotsNum }, () => null));
+      }
+    } else if (guestsParam) {
       const guests = parseInt(guestsParam, 10);
       if (guests > 0) {
         setPets(Array.from({ length: guests }, emptyPet));
@@ -79,11 +97,15 @@ const DogRoomBooking = () => {
       .catch(() => setRooms([]));
   }, []);
 
+  // Fetch user pets if logged in
   useEffect(() => {
     if (user && user.id) {
-      fetchData(apiEndpoints.userPets(user.id))
+      // Use correct endpoint for user pets (by userId)
+      fetchData({ endpoint: `/pets?userId=${user.id}`, method: 'GET' })
         .then(data => setUserPets(Array.isArray(data) ? data : []))
         .catch(() => setUserPets([]));
+    } else {
+      setUserPets([]);
     }
   }, [user, addingPet]);
 
@@ -139,53 +161,57 @@ const DogRoomBooking = () => {
 
   // Step navigation
   const next = async () => {
+    let hasError = false;
+    setShowFieldError(false);
+
     if (current === 0) {
       if (user && userPets.length > 0 && !showAddPet) {
         if (!selectedPets.length) {
           message.error('Please select at least one pet');
-          return;
+          setShowFieldError(true);
+          hasError = true;
         }
       } else if (showAddPet) {
-        // Validate newPet fields
         if (!newPet.dogName || !newPet.breed || !newPet.type) {
           message.error('Please fill all required details for the new pet');
-          return;
+          setShowFieldError(true);
+          hasError = true;
         }
       } else {
         for (let i = 0; i < pets.length; i++) {
           const pet = pets[i];
           if (!pet.dogName || !pet.breed || !pet.type) {
             message.error(`Please fill all required details for pet #${i + 1}`);
-            return;
+            setShowFieldError(true);
+            hasError = true;
+            break;
           }
         }
       }
       if (!dates) {
         message.error('Please select reservation dates');
-        return;
+        setShowFieldError(true);
+        hasError = true;
       }
-      navigate(
-        `/book?dates=${encodeURIComponent(
-          dates && dates.length === 2
-            ? `${dates[0].format('YYYY-MM-DD')},${dates[1].format('YYYY-MM-DD')}`
-            : ''
-        )}&guests=${user && userPets.length > 0 && !showAddPet ? selectedPets.length : pets.length}`
-      );
     }
     if (current === 1) {
       for (let i = 0; i < petRooms.length; i++) {
         if (!petRooms[i]) {
           message.error(`Please select a room for pet #${i + 1}`);
-          return;
+          setShowFieldError(true);
+          hasError = true;
+          break;
         }
       }
     }
     if (current === 2) {
       if (!ownerInfo.ownerName || !ownerInfo.ownerContact) {
         message.error('Please fill in owner information');
-        return;
+        setShowFieldError(true);
+        hasError = true;
       }
     }
+    if (hasError) return;
     setCurrent(current + 1);
   };
 
@@ -206,6 +232,12 @@ const DogRoomBooking = () => {
   try {
     return (
       <div className={styles.container}>
+        {/* Announcement for required fields */}
+        {showFieldError && (
+          <div style={{ color: '#d4380d', background: '#fffbe6', border: '1px solid #ffe58f', padding: 12, borderRadius: 6, marginBottom: 16 }}>
+            {t('booking.requiredFieldsAnnouncement', 'Please fill all required fields highlighted in red.')}
+          </div>
+        )}
         <Steps current={current} className={styles.steps}>
           {steps.map((item, idx) => (
             <Step
@@ -246,6 +278,7 @@ const DogRoomBooking = () => {
               setNewPet={setNewPet}
               addingPet={addingPet}
               handleAddNewPet={handleAddNewPet}
+              showFieldError={showFieldError}
             />
           )}
           {/* Step 2: Room Selection */}
@@ -257,6 +290,7 @@ const DogRoomBooking = () => {
               setPetRooms={setPetRooms}
               t={t}
               styles={styles}
+              showFieldError={showFieldError}
             />
           )}
           {/* Step 3: Confirmation */}
@@ -274,6 +308,7 @@ const DogRoomBooking = () => {
               selectedPets={selectedPets}
               userPets={userPets}
               showAddPet={showAddPet}
+              showFieldError={showFieldError}
             />
           )}
           <div style={{ marginTop: 24 }}>

@@ -36,7 +36,8 @@ const Pets = () => {
         setPets(prev => prev.map(p => (p.id === updated.id ? updated : p)));
         message.success(t('account.petUpdated'));
       } else {
-        const newPet = await createData(apiEndpoints.pets, { ...values, userId: user.id });
+        // Add userId to values for new pet
+        const newPet = await createData(apiEndpoints.addPetToUser(user.id), { ...values, userId: user.id });
         setPets(prev => [...prev, newPet]);
         message.success(t('account.petAdded'));
       }
@@ -105,10 +106,31 @@ const PetForm = ({ initialValues, onFinish, onCancel }) => {
       <Form.Item name="name" label={t('account.petName')} rules={[{ required: true }]}>
         <Input />
       </Form.Item>
-      <Form.Item name="type" label={t('account.petType')} rules={[{ required: true }]}>
+      <Form.Item name="species" label={t('account.petType')} rules={[{ required: true }]}>
         <Input />
       </Form.Item>
       <Form.Item name="breed" label={t('account.petBreed')}>
+        <Input />
+      </Form.Item>
+      <Form.Item name="age" label={t('account.petAge')}>
+        <Input type="number" min={0} />
+      </Form.Item>
+      <Form.Item name="size" label={t('account.petSize')}>
+        <Input />
+      </Form.Item>
+      <Form.Item name="weight" label={t('account.petWeight')}>
+        <Input type="number" min={0} />
+      </Form.Item>
+      <Form.Item name="specialNeeds" label={t('account.petSpecialNeeds')}>
+        <Input />
+      </Form.Item>
+      <Form.Item name="temperament" label={t('account.petTemperament')}>
+        <Input />
+      </Form.Item>
+      <Form.Item name="vaccines" label={t('account.petVaccines')}>
+        <Input placeholder={t('account.petVaccinesPlaceholder')} />
+      </Form.Item>
+      <Form.Item name="photo" label={t('account.petPhoto')}>
         <Input />
       </Form.Item>
       <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 8 }}>

@@ -35,9 +35,18 @@ const PetsPage = () => {
   const columns = [
     { title: t('dashboard.pets.id', 'ID'), dataIndex: 'id', width: 60 },
     { title: t('dashboard.pets.name', 'Name'), dataIndex: 'name' },
-    { title: t('dashboard.pets.type', 'Type'), dataIndex: 'type' },
+    { title: t('dashboard.pets.type', 'Type'), dataIndex: 'species' },
     { title: t('dashboard.pets.breed', 'Breed'), dataIndex: 'breed' },
     { title: t('dashboard.pets.owner', 'Owner'), dataIndex: 'userId' },
+    { title: 'Age', dataIndex: 'age' },
+    { title: 'Size', dataIndex: 'size' },
+    { title: 'Weight (kg)', dataIndex: 'weight' },
+    { title: 'Special Needs', dataIndex: 'specialNeeds' },
+    { title: 'Temperament', dataIndex: 'temperament' },
+    { title: 'Vaccines', dataIndex: 'vaccines' },
+    { title: 'Photo', dataIndex: 'photo',
+      render: (photo) => photo ? <img src={photo} alt="pet" style={{ width: 40, height: 40, objectFit: 'cover', borderRadius: 4 }} /> : null
+    },
     {
       title: t('dashboard.pets.actions', 'Actions'),
       key: 'actions',

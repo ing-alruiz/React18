@@ -177,7 +177,15 @@
     "pet": "Pet",
     "room": "Room",
     "date": "Date",
-    "reservationsLoadError": "Failed to load reservations"
+    "reservationsLoadError": "Failed to load reservations",
+    "petAge": "Age",
+    "petSize": "Size",
+    "petWeight": "Weight (kg)",
+    "petSpecialNeeds": "Special Needs",
+    "petTemperament": "Temperament",
+    "petVaccines": "Vaccines",
+    "petVaccinesPlaceholder": "Comma separated (e.g. Rabies, Parvovirus)",
+    "petPhoto": "Photo URL"
   },
   "dashboard": {
     "title": "Admin Dashboard",

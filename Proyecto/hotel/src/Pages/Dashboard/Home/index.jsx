@@ -82,7 +82,7 @@ const Dashboard = () => {
             <Col xs={24} sm={12} md={8} lg={4}>
               <Card
                 hoverable
-                onClick={() => navigate('/dashboard/reservations')}
+                onClick={() => navigate('/dashboard/bookings')}
                 style={{ cursor: 'pointer' }}
               >
                 <Statistic

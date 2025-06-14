@@ -91,7 +91,17 @@ export const updateData = async (endpoint, data, method = 'PATCH') => {
 
 // Add this function to handle POST requests (create)
 export async function createData(endpoint, data) {
-    const url = typeof endpoint === 'object' ? endpoint.endpoint : endpoint;
+    // Support both endpoint object and string
+    let url;
+    if (typeof endpoint === 'object') {
+        url = endpoint.endpoint;
+    } else {
+        url = endpoint;
+    }
+    // If endpoint does not start with http, add baseURL
+    if (!/^https?:\/\//.test(url)) {
+        url = `${apiConfig.baseURL}${url.startsWith('/') ? url : '/' + url}`;
+    }
     const response = await fetch(url, {
         method: 'POST',
         headers: {

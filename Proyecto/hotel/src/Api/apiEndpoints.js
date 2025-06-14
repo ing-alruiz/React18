@@ -63,6 +63,8 @@ const apiEndpoints = {
         endpoint: `/pets/${id}`,
         method: 'PATCH',
     }),
+    // Add pet to user: POST /users/:userId/pets
+    addPetToUser: (userId) => `/users/${userId}/pets`,
     userReservations: (userId) => ({
         endpoint: `/reservations?userId=${userId}`,
         method: 'GET',

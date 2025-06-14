@@ -183,7 +183,15 @@
         "pet": "Mascota",
         "room": "Habitación",
         "date": "Fecha",
-        "reservationsLoadError": "Error al cargar reservas"
+        "reservationsLoadError": "Error al cargar reservas",
+        "petAge": "Edad",
+        "petSize": "Tamaño",
+        "petWeight": "Peso (kg)",
+        "petSpecialNeeds": "Necesidades especiales",
+        "petTemperament": "Temperamento",
+        "petVaccines": "Vacunas",
+        "petVaccinesPlaceholder": "Separadas por coma (ej. Rabia, Parvovirus)",
+        "petPhoto": "Foto (URL)"
     },
     "dashboard": {
         "title": "Panel de Administración",

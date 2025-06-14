@@ -35,6 +35,12 @@
   align-items: center; /* Center all internal components horizontally */
 }
 
+.breadcrumbContainer :global(.ant-breadcrumb),
+.breadcrumbContainer :global(.ant-breadcrumb-link),
+.breadcrumbContainer :global(.ant-breadcrumb-separator) {
+  color: var(--color-white) !important;
+}
+
 .backgroundImage {
   background-image: url("/images/dog.jpg"); /* Change path as needed */
   background-size: cover;

@@ -13,10 +13,12 @@ const RoomModify = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetchData(`${apiEndpoints.rooms.endpoint}/${id}`)
+    fetchData({ endpoint: `/rooms/${id}`, method: 'GET' })
       .then(data => {
         setRoom(data);
-        form.setFieldsValue(data);
+        if (data) {
+          form.setFieldsValue(data);
+        }
       })
       .finally(() => setLoading(false));
   }, [id, form]);
@@ -45,7 +47,7 @@ const RoomModify = () => {
   return (
     <div style={{ maxWidth: 500, margin: '32px auto' }}>
       <Card title={`Edit Room #${id}`}>
-        <Form form={form} layout="vertical" onFinish={onFinish}>
+        <Form form={form} layout="vertical" onFinish={onFinish} initialValues={room}>
           <Form.Item name="roomNumber" label="Room Number" rules={[{ required: true }]}>
             <Input />
           </Form.Item>

@@ -13,10 +13,12 @@ const RoomTypeEdit = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetchData(`${apiEndpoints.roomTypes.endpoint}/${id}`)
+    fetchData({ endpoint: `/roomTypes/${id}`, method: 'GET' })
       .then(data => {
         setRoomType(data);
-        form.setFieldsValue(data);
+        if (data) {
+          form.setFieldsValue(data);
+        }
       })
       .finally(() => setLoading(false));
   }, [id, form]);
@@ -45,7 +47,7 @@ const RoomTypeEdit = () => {
   return (
     <div style={{ maxWidth: 500, margin: '32px auto' }}>
       <Card title={`Edit Room Type #${id}`}>
-        <Form form={form} layout="vertical" onFinish={onFinish}>
+        <Form form={form} layout="vertical" onFinish={onFinish} initialValues={roomType}>
           <Form.Item name="name" label="Name" rules={[{ required: true }]}>
             <Input />
           </Form.Item>

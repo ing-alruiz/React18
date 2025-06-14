@@ -13,10 +13,12 @@ const UserEdit = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetchData(`${apiEndpoints.users.endpoint}/${id}`)
+    fetchData({ endpoint: `/users/${id}`, method: 'GET' })
       .then(data => {
         setUser(data);
-        form.setFieldsValue(data);
+        if (data) {
+          form.setFieldsValue(data);
+        }
       })
       .finally(() => setLoading(false));
   }, [id, form]);
@@ -45,7 +47,7 @@ const UserEdit = () => {
   return (
     <div style={{ maxWidth: 500, margin: '32px auto' }}>
       <Card title={`Edit User #${id}`}>
-        <Form form={form} layout="vertical" onFinish={onFinish}>
+        <Form form={form} layout="vertical" onFinish={onFinish} initialValues={user}>
           <Form.Item name="name" label="Name" rules={[{ required: true }]}>
             <Input />
           </Form.Item>

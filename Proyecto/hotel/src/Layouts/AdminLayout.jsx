@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Menu from '../Components/Dashboard/Menu/Menu';
 import TopBar from '../Components/Dashboard/TopBar/TopBar'; // Add this import
+import styles from './AdminLayout.module.css';
 
 const breadcrumbNameMap = {
   '/': 'Dashboard',
@@ -48,11 +49,11 @@ const AdminLayout = ({ children }) => {
     ];
 
     return (
-        <div style={{ height: '100vh', width: '100vw', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+        <div className={styles.adminLayoutRoot}>
             <TopBar />
             <div style={{ display: 'flex', flex: 1, height: 'calc(100vh - 56px)' }}>
                 <Menu />
-                <div style={{ flex: 1, padding: '32px', overflowY: 'auto' }}>
+                <div className={styles.adminMainContent}>
                     <Breadcrumb style={{ marginBottom: 16 }}>
                         {breadcrumbItems}
                     </Breadcrumb>

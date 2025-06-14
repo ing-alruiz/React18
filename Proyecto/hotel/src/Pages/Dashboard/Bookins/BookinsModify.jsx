@@ -15,25 +15,28 @@ const BookinsModify = () => {
   const [users, setUsers] = useState([]);
   const [roomTypes, setRoomTypes] = useState([]);
   const [services, setServices] = useState([]);
+  const [pets, setPets] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
-    // Fetch booking, users, roomTypes, services in parallel
+    // Fetch booking, users, roomTypes, services, pets in parallel
     Promise.all([
-      fetchData(apiEndpoints.reservation(id) ), // This is the issue: fetchData expects an endpoint object or string
+      fetchData({ endpoint: `/reservations/${id}`, method: 'GET' }),
       fetchData(apiEndpoints.users),
       fetchData(apiEndpoints.roomTypes),
-      fetchData(apiEndpoints.services)
-    ]).then(([bookingData, usersData, roomTypesData, servicesData]) => {
+      fetchData(apiEndpoints.services),
+      fetchData(apiEndpoints.pets)
+    ]).then(([bookingData, usersData, roomTypesData, servicesData, petsData]) => {
       setBooking(bookingData);
       setUsers(usersData);
       setRoomTypes(roomTypesData);
       setServices(servicesData);
-      // Set form fields only if bookingData exists
+      setPets(petsData);
       if (bookingData) {
         form.setFieldsValue({
           userId: bookingData.userId,
+          petIds: bookingData.petIds,
           roomTypeId: bookingData.roomTypeId,
           services: bookingData.services,
           dates: [
@@ -44,8 +47,7 @@ const BookinsModify = () => {
         });
       }
     }).finally(() => setLoading(false));
-    // eslint-disable-next-line
-  }, [id]);
+  }, [id, form]);
 
   const onFinish = async (values) => {
     setLoading(true);
@@ -81,7 +83,7 @@ const BookinsModify = () => {
   return (
     <div style={{ maxWidth: 500, margin: '32px auto' }}>
       <Card title={`Edit Booking #${id}`}>
-        <Form form={form} layout="vertical" onFinish={onFinish}>
+        <Form form={form} layout="vertical" onFinish={onFinish} initialValues={booking}>
           <Form.Item
             name="userId"
             label="User"
@@ -98,6 +100,26 @@ const BookinsModify = () => {
               {users.map(u => (
                 <Select.Option key={u.id} value={u.id}>
                   {u.name} ({u.email})
+                </Select.Option>
+              ))}
+            </Select>
+          </Form.Item>
+          <Form.Item
+            name="petIds"
+            label="Mascots"
+            rules={[{ required: true, message: 'Please select at least one mascot' }]}
+          >
+            <Select
+              mode="multiple"
+              placeholder="Select mascots"
+              optionFilterProp="children"
+              filterOption={(input, option) =>
+                (option?.children ?? '').toLowerCase().includes(input.toLowerCase())
+              }
+            >
+              {pets.map(pet => (
+                <Select.Option key={pet.id} value={pet.id}>
+                  {pet.name} ({pet.species}) - {pet.breed}
                 </Select.Option>
               ))}
             </Select>
@@ -141,6 +163,20 @@ const BookinsModify = () => {
           >
             <Input type="number" min={0} prefix="$" />
           </Form.Item>
+          {/* Owner info display */}
+          {booking && users.length > 0 && (
+            <Card type="inner" title="Owner Information" style={{ marginBottom: 16 }}>
+              <div>
+                <strong>Name:</strong> {users.find(u => u.id === booking.userId)?.name || '-'}
+              </div>
+              <div>
+                <strong>Email:</strong> {users.find(u => u.id === booking.userId)?.email || '-'}
+              </div>
+              <div>
+                <strong>Phone:</strong> {users.find(u => u.id === booking.userId)?.phone || '-'}
+              </div>
+            </Card>
+          )}
           <Form.Item>
             <Button type="primary" htmlType="submit" loading={loading} block>
               Save Changes

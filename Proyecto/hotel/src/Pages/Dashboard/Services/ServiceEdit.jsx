@@ -13,10 +13,12 @@ const ServiceEdit = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetchData(`${apiEndpoints.services.endpoint}/${id}`)
+    fetchData({ endpoint: `/services/${id}`, method: 'GET' })
       .then(data => {
         setService(data);
-        form.setFieldsValue(data);
+        if (data) {
+          form.setFieldsValue(data);
+        }
       })
       .finally(() => setLoading(false));
   }, [id, form]);
@@ -45,7 +47,7 @@ const ServiceEdit = () => {
   return (
     <div style={{ maxWidth: 500, margin: '32px auto' }}>
       <Card title={`Edit Service #${id}`}>
-        <Form form={form} layout="vertical" onFinish={onFinish}>
+        <Form form={form} layout="vertical" onFinish={onFinish} initialValues={service}>
           <Form.Item name="title_en" label="Title (EN)" rules={[{ required: true }]}>
             <Input />
           </Form.Item>

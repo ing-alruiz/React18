@@ -29,10 +29,31 @@ const PetNew = () => {
           <Form.Item name="name" label="Name" rules={[{ required: true }]}>
             <Input />
           </Form.Item>
-          <Form.Item name="type" label="Type" rules={[{ required: true }]}>
+          <Form.Item name="species" label="Species" rules={[{ required: true }]}>
             <Input />
           </Form.Item>
           <Form.Item name="breed" label="Breed">
+            <Input />
+          </Form.Item>
+          <Form.Item name="age" label="Age">
+            <Input type="number" min={0} />
+          </Form.Item>
+          <Form.Item name="size" label="Size">
+            <Input />
+          </Form.Item>
+          <Form.Item name="weight" label="Weight (kg)">
+            <Input type="number" min={0} />
+          </Form.Item>
+          <Form.Item name="specialNeeds" label="Special Needs">
+            <Input />
+          </Form.Item>
+          <Form.Item name="temperament" label="Temperament">
+            <Input />
+          </Form.Item>
+          <Form.Item name="vaccines" label="Vaccines">
+            <Input placeholder="Comma separated (e.g. Rabies, Parvovirus)" />
+          </Form.Item>
+          <Form.Item name="photo" label="Photo URL">
             <Input />
           </Form.Item>
           <Form.Item name="userId" label="Owner ID">

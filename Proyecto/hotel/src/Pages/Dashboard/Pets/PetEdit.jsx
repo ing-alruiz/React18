@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Form, Input, Button, Card, message, Spin, Select } from 'antd';
+import { Form, Input, Button, Card, message, Spin } from 'antd';
 import { useParams, useNavigate } from 'react-router-dom';
 import { fetchData, updateData } from '../../../Api/apiService';
 import apiEndpoints from '../../../Api/apiEndpoints';
@@ -13,10 +13,12 @@ const PetEdit = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetchData(`${apiEndpoints.pets.endpoint}/${id}`)
+    fetchData({ endpoint: `/pets/${id}`, method: 'GET' })
       .then(data => {
         setPet(data);
-        form.setFieldsValue(data);
+        if (data) {
+          form.setFieldsValue(data);
+        }
       })
       .finally(() => setLoading(false));
   }, [id, form]);
@@ -34,7 +36,7 @@ const PetEdit = () => {
     }
   };
 
-  if (loading && !pet) {
+  if (loading) {
     return (
       <div style={{ textAlign: 'center', marginTop: 64 }}>
         <Spin size="large" />
@@ -45,14 +47,40 @@ const PetEdit = () => {
   return (
     <div style={{ maxWidth: 500, margin: '32px auto' }}>
       <Card title={`Edit Pet #${id}`}>
-        <Form form={form} layout="vertical" onFinish={onFinish}>
+        <Form
+          form={form}
+          layout="vertical"
+          onFinish={onFinish}
+          initialValues={pet}
+        >
           <Form.Item name="name" label="Name" rules={[{ required: true }]}>
             <Input />
           </Form.Item>
-          <Form.Item name="type" label="Type" rules={[{ required: true }]}>
+          <Form.Item name="species" label="Species" rules={[{ required: true }]}>
             <Input />
           </Form.Item>
           <Form.Item name="breed" label="Breed">
+            <Input />
+          </Form.Item>
+          <Form.Item name="age" label="Age">
+            <Input type="number" min={0} />
+          </Form.Item>
+          <Form.Item name="size" label="Size">
+            <Input />
+          </Form.Item>
+          <Form.Item name="weight" label="Weight (kg)">
+            <Input type="number" min={0} />
+          </Form.Item>
+          <Form.Item name="specialNeeds" label="Special Needs">
+            <Input />
+          </Form.Item>
+          <Form.Item name="temperament" label="Temperament">
+            <Input />
+          </Form.Item>
+          <Form.Item name="vaccines" label="Vaccines">
+            <Input placeholder="Comma separated (e.g. Rabies, Parvovirus)" />
+          </Form.Item>
+          <Form.Item name="photo" label="Photo URL">
             <Input />
           </Form.Item>
           <Form.Item name="userId" label="Owner ID">

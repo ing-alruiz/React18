@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Table, Button, Popconfirm, message, Tag, Space, Card, Input, InputNumber, Modal, Form } from 'antd';
+import { Table, Button, Popconfirm, message, Tag, Space } from 'antd';
 import { PlusOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
-import { fetchData, updateData, createData } from '../../../Api/apiService';
+import { fetchData, updateData } from '../../../Api/apiService';
 import apiEndpoints from '../../../Api/apiEndpoints';
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const RoomTypesPage = () => {
   const [roomTypes, setRoomTypes] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [editing, setEditing] = useState(null);
-
-  const [form] = Form.useForm();
+  const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
     loadRoomTypes();
@@ -36,60 +36,33 @@ const RoomTypesPage = () => {
     }
   };
 
-  const openModal = (record = null) => {
-    setEditing(record);
-    setModalOpen(true);
-    if (record) {
-      form.setFieldsValue(record);
-    } else {
-      form.resetFields();
-    }
-  };
-
-  const handleModalOk = async () => {
-    try {
-      const values = await form.validateFields();
-      setLoading(true);
-      if (editing) {
-        await updateData(apiEndpoints.roomType(editing.id), values);
-        message.success('Room type updated');
-      } else {
-        await createData(apiEndpoints.roomTypes, values);
-        message.success('Room type created');
-      }
-      setModalOpen(false);
-      setEditing(null);
-      loadRoomTypes();
-    } catch (e) {
-      // validation error or API error
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const columns = [
-    { title: 'ID', dataIndex: 'id', width: 60 },
-    { title: 'Species', dataIndex: 'species', render: s => <Tag>{s}</Tag> },
-    { title: 'Name', dataIndex: 'name' },
-    { title: 'Description', dataIndex: 'description' },
-    { title: 'Price', dataIndex: 'price', render: price => <span>${price}</span> },
+    { title: t('dashboard.roomTypes.id', 'ID'), dataIndex: 'id', width: 60 },
+    { title: t('dashboard.roomTypes.species', 'Species'), dataIndex: 'species', render: s => <Tag>{s}</Tag> },
+    { title: t('dashboard.roomTypes.name', 'Name'), dataIndex: 'name' },
+    { title: t('dashboard.roomTypes.description', 'Description'), dataIndex: 'description' },
+    { title: t('dashboard.roomTypes.price', 'Price'), dataIndex: 'price', render: price => <span>${price}</span> },
     {
-      title: 'Actions',
+      title: t('dashboard.roomTypes.actions', 'Actions'),
       key: 'actions',
       width: 120,
       render: (_, record) => (
         <Space>
-          <Button icon={<EditOutlined />} size="small" onClick={() => openModal(record)}>
-            Edit
+          <Button
+            icon={<EditOutlined />}
+            size="small"
+            onClick={() => navigate(`/dashboard/room-types/${record.id}`)}
+          >
+            {t('dashboard.roomTypes.edit', 'Edit')}
           </Button>
           <Popconfirm
-            title="Are you sure to delete this room type?"
+            title={t('dashboard.roomTypes.confirmDelete', 'Are you sure to delete this room type?')}
             onConfirm={() => handleDelete(record)}
-            okText="Yes"
-            cancelText="No"
+            okText={t('dashboard.roomTypes.yes', 'Yes')}
+            cancelText={t('dashboard.roomTypes.no', 'No')}
           >
             <Button icon={<DeleteOutlined />} size="small" danger>
-              Delete
+              {t('dashboard.roomTypes.delete', 'Delete')}
             </Button>
           </Popconfirm>
         </Space>
@@ -100,9 +73,9 @@ const RoomTypesPage = () => {
   return (
     <div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
-        <h2 style={{ margin: 0 }}>Room Types</h2>
-        <Button type="primary" icon={<PlusOutlined />} onClick={() => openModal()}>
-          Add Room Type
+        <h2 style={{ margin: 0 }}>{t('dashboard.roomTypes.title', 'Room Types')}</h2>
+        <Button type="primary" icon={<PlusOutlined />} onClick={() => navigate('/dashboard/room-types/new')}>
+          {t('dashboard.roomTypes.add', 'Add Room Type')}
         </Button>
       </div>
       <Table
@@ -112,29 +85,6 @@ const RoomTypesPage = () => {
         loading={loading}
         pagination={{ pageSize: 10 }}
       />
-      <Modal
-        open={modalOpen}
-        title={editing ? 'Edit Room Type' : 'Add Room Type'}
-        onCancel={() => setModalOpen(false)}
-        onOk={handleModalOk}
-        confirmLoading={loading}
-        destroyOnClose
-      >
-        <Form form={form} layout="vertical">
-          <Form.Item name="name" label="Name" rules={[{ required: true }]}>
-            <Input />
-          </Form.Item>
-          <Form.Item name="species" label="Species" rules={[{ required: true }]}>
-            <Input />
-          </Form.Item>
-          <Form.Item name="description" label="Description">
-            <Input.TextArea rows={2} />
-          </Form.Item>
-          <Form.Item name="price" label="Price" rules={[{ required: true }]}>
-            <InputNumber min={0} prefix="$" style={{ width: '100%' }} />
-          </Form.Item>
-        </Form>
-      </Modal>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { PlusOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import { fetchData, updateData } from '../../../Api/apiService';
 import apiEndpoints from '../../../Api/apiEndpoints';
+import { useTranslation } from 'react-i18next';
 
 const BOOKINGS_ENDPOINT = apiEndpoints.reservations || '/reservations';
 
@@ -11,6 +12,7 @@ const BookingsPage = () => {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   // Fetch bookings on mount
   useEffect(() => {
@@ -45,40 +47,40 @@ const BookingsPage = () => {
   // Columns for the table
   const columns = [
     {
-      title: 'ID',
+      title: t('dashboard.bookings.id', 'ID'),
       dataIndex: 'id',
       width: 60,
     },
     {
-      title: 'User',
+      title: t('dashboard.bookings.user', 'User'),
       dataIndex: 'userId',
-      render: userId => <span>User #{userId}</span>,
+      render: userId => <span>{t('dashboard.bookings.userLabel', 'User')} #{userId}</span>,
     },
     {
-      title: 'Room',
+      title: t('dashboard.bookings.room', 'Room'),
       dataIndex: 'roomTypeId',
-      render: roomTypeId => <span>Room #{roomTypeId}</span>,
+      render: roomTypeId => <span>{t('dashboard.bookings.roomLabel', 'Room')} #{roomTypeId}</span>,
     },
     {
-      title: 'Check In',
+      title: t('dashboard.bookings.checkIn', 'Check In'),
       dataIndex: 'checkIn',
     },
     {
-      title: 'Check Out',
+      title: t('dashboard.bookings.checkOut', 'Check Out'),
       dataIndex: 'checkOut',
     },
     {
-      title: 'Status',
+      title: t('dashboard.bookings.status', 'Status'),
       dataIndex: 'status',
       render: status => <Tag color={status === 'confirmada' ? 'green' : 'orange'}>{status}</Tag>,
     },
     {
-      title: 'Total',
+      title: t('dashboard.bookings.total', 'Total'),
       dataIndex: 'total',
       render: total => <span>${total}</span>,
     },
     {
-      title: 'Actions',
+      title: t('dashboard.bookings.actions', 'Actions'),
       key: 'actions',
       width: 120,
       render: (_, record) => (
@@ -88,16 +90,16 @@ const BookingsPage = () => {
             size="small"
             onClick={() => navigate(`/dashboard/bookings/${record.id}`)}
           >
-            Edit
+            {t('dashboard.bookings.edit', 'Edit')}
           </Button>
           <Popconfirm
-            title="Are you sure to delete this booking?"
+            title={t('dashboard.bookings.confirmDelete', 'Are you sure to delete this booking?')}
             onConfirm={() => handleDelete(record)}
-            okText="Yes"
-            cancelText="No"
+            okText={t('dashboard.bookings.yes', 'Yes')}
+            cancelText={t('dashboard.bookings.no', 'No')}
           >
             <Button icon={<DeleteOutlined />} size="small" danger>
-              Delete
+              {t('dashboard.bookings.delete', 'Delete')}
             </Button>
           </Popconfirm>
         </Space>
@@ -108,13 +110,13 @@ const BookingsPage = () => {
   return (
     <div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
-        <h2 style={{ margin: 0 }}>Latest Bookings</h2>
+        <h2 style={{ margin: 0 }}>{t('dashboard.bookings.title', 'Latest Bookings')}</h2>
         <Button
           type="primary"
           icon={<PlusOutlined />}
           onClick={() => navigate('/dashboard/bookings/new')}
         >
-          Create Booking
+          {t('dashboard.bookings.create', 'Create Booking')}
         </Button>
       </div>
       <Table

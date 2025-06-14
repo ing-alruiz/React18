@@ -64,7 +64,6 @@
   width: 150px;
   overflow: visible; /* <-- allow dropdown to show outside */
   position: relative; /* <-- needed for absolute dropdown */
-  margin: auto;
 }
 
 .profileMini .avatar {

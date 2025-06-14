@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { Table, Button, Popconfirm, message, Space } from 'antd';
-import { DeleteOutlined } from '@ant-design/icons';
+import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { fetchData, updateData } from '../../../Api/apiService';
 import apiEndpoints from '../../../Api/apiEndpoints';
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const PetsPage = () => {
   const [pets, setPets] = useState([]);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
     setLoading(true);
     fetchData(apiEndpoints.pets)
-      .then(setPets)
+      .then(data => setPets((data || []).filter(p => !p.deleted)))
       .finally(() => setLoading(false));
   }, []);
 
@@ -29,25 +33,32 @@ const PetsPage = () => {
   };
 
   const columns = [
-    { title: 'ID', dataIndex: 'id', width: 60 },
-    { title: 'Name', dataIndex: 'name' },
-    { title: 'Type', dataIndex: 'type' },
-    { title: 'Breed', dataIndex: 'breed' },
-    { title: 'Owner', dataIndex: 'userId' },
+    { title: t('dashboard.pets.id', 'ID'), dataIndex: 'id', width: 60 },
+    { title: t('dashboard.pets.name', 'Name'), dataIndex: 'name' },
+    { title: t('dashboard.pets.type', 'Type'), dataIndex: 'type' },
+    { title: t('dashboard.pets.breed', 'Breed'), dataIndex: 'breed' },
+    { title: t('dashboard.pets.owner', 'Owner'), dataIndex: 'userId' },
     {
-      title: 'Actions',
+      title: t('dashboard.pets.actions', 'Actions'),
       key: 'actions',
       width: 120,
       render: (_, record) => (
         <Space>
+          <Button
+            icon={<EditOutlined />}
+            size="small"
+            onClick={() => navigate(`/dashboard/pets/${record.id}`)}
+          >
+            {t('dashboard.pets.edit', 'Edit')}
+          </Button>
           <Popconfirm
-            title="Are you sure to delete this pet?"
+            title={t('dashboard.pets.confirmDelete', 'Are you sure to delete this pet?')}
             onConfirm={() => handleDelete(record)}
-            okText="Yes"
-            cancelText="No"
+            okText={t('dashboard.pets.yes', 'Yes')}
+            cancelText={t('dashboard.pets.no', 'No')}
           >
             <Button icon={<DeleteOutlined />} size="small" danger>
-              Delete
+              {t('dashboard.pets.delete', 'Delete')}
             </Button>
           </Popconfirm>
         </Space>
@@ -58,11 +69,14 @@ const PetsPage = () => {
   return (
     <div style={{ padding: 32 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
-        <h2 style={{ margin: 0 }}>Pets</h2>
+        <h2 style={{ margin: 0 }}>{t('dashboard.pets.title', 'Pets')}</h2>
+        <Button type="primary" onClick={() => navigate('/dashboard/pets/new')}>
+          {t('dashboard.pets.add', 'Add Pet')}
+        </Button>
       </div>
       <Table
         columns={columns}
-        dataSource={pets.filter(p => !p.deleted)}
+        dataSource={pets}
         rowKey="id"
         loading={loading}
         pagination={{ pageSize: 10 }}

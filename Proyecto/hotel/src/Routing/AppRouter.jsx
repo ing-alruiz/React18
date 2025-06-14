@@ -31,6 +31,14 @@ import UsersPage from '../Pages/Dashboard/Users';
 import PetsPage from '../Pages/Dashboard/Pets';
 import ServicesAdminPage from '../Pages/Dashboard/Services';
 import RoomTypesPage from '../Pages/Dashboard/RoomTypes';
+import UserEdit from '../Pages/Dashboard/Users/UserEdit';
+import UserNew from '../Pages/Dashboard/Users/UserNew';
+import PetEdit from '../Pages/Dashboard/Pets/PetEdit';
+import PetNew from '../Pages/Dashboard/Pets/PetNew';
+import RoomTypeEdit from '../Pages/Dashboard/RoomTypes/RoomTypeEdit';
+import RoomTypeNew from '../Pages/Dashboard/RoomTypes/RoomTypeNew';
+import ServiceEdit from '../Pages/Dashboard/Services/ServiceEdit';
+import ServiceNew from '../Pages/Dashboard/Services/ServiceNew';
 
 const LayoutWrapper = () => (
   <MainLayout>
@@ -159,6 +167,70 @@ const AppRouter = () => (
           element={
             <AdminRoute>
               <RoomModify />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/users/new"
+          element={
+            <AdminRoute>
+              <UserNew />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/users/:id"
+          element={
+            <AdminRoute>
+              <UserEdit />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/pets/new"
+          element={
+            <AdminRoute>
+              <PetNew />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/pets/:id"
+          element={
+            <AdminRoute>
+              <PetEdit />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/room-types/new"
+          element={
+            <AdminRoute>
+              <RoomTypeNew />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/room-types/:id"
+          element={
+            <AdminRoute>
+              <RoomTypeEdit />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/services/new"
+          element={
+            <AdminRoute>
+              <ServiceNew />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/services/:id"
+          element={
+            <AdminRoute>
+              <ServiceEdit />
             </AdminRoute>
           }
         />

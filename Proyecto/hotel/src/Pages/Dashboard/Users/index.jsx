@@ -1,19 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { Table, Button, Popconfirm, message, Space } from 'antd';
 import { PlusOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
-import { fetchData, updateData, createData } from '../../../Api/apiService';
+import { fetchData, updateData } from '../../../Api/apiService';
 import apiEndpoints from '../../../Api/apiEndpoints';
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const UsersPage = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
+    loadUsers();
+  }, []);
+
+  const loadUsers = () => {
     setLoading(true);
     fetchData(apiEndpoints.users)
-      .then(setUsers)
+      .then(data => setUsers((data || []).filter(u => !u.deleted)))
       .finally(() => setLoading(false));
-  }, []);
+  };
 
   const handleDelete = async (record) => {
     setLoading(true);
@@ -29,25 +37,31 @@ const UsersPage = () => {
   };
 
   const columns = [
-    { title: 'ID', dataIndex: 'id', width: 60 },
-    { title: 'Name', dataIndex: 'name' },
-    { title: 'Email', dataIndex: 'email' },
-    { title: 'Role', dataIndex: 'role' },
+    { title: t('dashboard.users.id', 'ID'), dataIndex: 'id', width: 60 },
+    { title: t('dashboard.users.name', 'Name'), dataIndex: 'name' },
+    { title: t('dashboard.users.email', 'Email'), dataIndex: 'email' },
+    { title: t('dashboard.users.role', 'Role'), dataIndex: 'role' },
     {
-      title: 'Actions',
+      title: t('dashboard.users.actions', 'Actions'),
       key: 'actions',
       width: 120,
       render: (_, record) => (
         <Space>
-          {/* You can add edit functionality here */}
+          <Button
+            icon={<EditOutlined />}
+            size="small"
+            onClick={() => navigate(`/dashboard/users/${record.id}`)}
+          >
+            {t('dashboard.users.edit', 'Edit')}
+          </Button>
           <Popconfirm
-            title="Are you sure to delete this user?"
+            title={t('dashboard.users.confirmDelete', 'Are you sure to delete this user?')}
             onConfirm={() => handleDelete(record)}
-            okText="Yes"
-            cancelText="No"
+            okText={t('dashboard.users.yes', 'Yes')}
+            cancelText={t('dashboard.users.no', 'No')}
           >
             <Button icon={<DeleteOutlined />} size="small" danger>
-              Delete
+              {t('dashboard.users.delete', 'Delete')}
             </Button>
           </Popconfirm>
         </Space>
@@ -56,14 +70,16 @@ const UsersPage = () => {
   ];
 
   return (
-    <div style={{ padding: 32 }}>
+    <div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
-        <h2 style={{ margin: 0 }}>Users</h2>
-        {/* Add user functionality can be added here */}
+        <h2 style={{ margin: 0 }}>{t('dashboard.users.title', 'Users')}</h2>
+        <Button type="primary" icon={<PlusOutlined />} onClick={() => navigate('/dashboard/users/new')}>
+          {t('dashboard.users.add', 'Add User')}
+        </Button>
       </div>
       <Table
         columns={columns}
-        dataSource={users.filter(u => !u.deleted)}
+        dataSource={users}
         rowKey="id"
         loading={loading}
         pagination={{ pageSize: 10 }}

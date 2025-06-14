@@ -6,43 +6,49 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { fetchData } from '../../../Api/apiService';
 import apiEndpoints from '../../../Api/apiEndpoints';
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Dashboard = () => {
   const [stats, setStats] = useState({
     users: 0,
     bookings: 0,
     pets: 0,
-    rooms: 0,
+    roomsAvailable: 0,
+    roomsTotal: 0,
     services: 0,
   });
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     async function fetchStats() {
       setLoading(true);
       try {
-        // Use .endpoint for each resource
         const [users, bookings, pets, rooms, services] = await Promise.all([
           fetchData({ endpoint: apiEndpoints.users.endpoint, method: 'GET' }),
           fetchData({ endpoint: apiEndpoints.reservations.endpoint, method: 'GET' }),
           fetchData({ endpoint: apiEndpoints.pets.endpoint, method: 'GET' }),
-          fetchData({ endpoint: apiEndpoints.roomTypes.endpoint, method: 'GET' }),
+          fetchData({ endpoint: apiEndpoints.rooms.endpoint, method: 'GET' }),
           fetchData({ endpoint: apiEndpoints.services.endpoint, method: 'GET' }),
         ]);
+        const roomsArr = Array.isArray(rooms) ? rooms.filter(r => !r.deleted) : [];
         setStats({
           users: Array.isArray(users) ? users.filter(u => !u.deleted).length : 0,
           bookings: Array.isArray(bookings) ? bookings.filter(b => !b.deleted).length : 0,
           pets: Array.isArray(pets) ? pets.filter(p => !p.deleted).length : 0,
-          rooms: Array.isArray(rooms) ? rooms.filter(r => !r.deleted).length : 0,
+          roomsAvailable: roomsArr.filter(r => r.status === 'available').length,
+          roomsTotal: roomsArr.length,
           services: Array.isArray(services) ? services.filter(s => !s.deleted).length : 0,
         });
       } catch {
-        // fallback: show zeros
         setStats({
           users: 0,
           bookings: 0,
           pets: 0,
-          rooms: 0,
+          roomsAvailable: 0,
+          roomsTotal: 0,
           services: 0,
         });
       } finally {
@@ -54,62 +60,88 @@ const Dashboard = () => {
 
   return (
     <div>
-      <h1 style={{ marginBottom: 24 }}>Admin Dashboard</h1>
+      <h1 style={{ marginBottom: 24 }}>{t('dashboard.title', 'Admin Dashboard')}</h1>
       {loading ? (
         <Spin size="large" />
       ) : (
         <>
           <Row gutter={24} style={{ marginBottom: 32 }}>
             <Col xs={24} sm={12} md={8} lg={4}>
-              <Card>
+              <Card
+                hoverable
+                onClick={() => navigate('/dashboard/users')}
+                style={{ cursor: 'pointer' }}
+              >
                 <Statistic
-                  title="Users"
+                  title={t('dashboard.cards.users', 'Users')}
                   value={stats.users}
                   prefix={<FontAwesomeIcon icon={faUsers} style={{ color: '#0078d4' }} />}
                 />
               </Card>
             </Col>
             <Col xs={24} sm={12} md={8} lg={4}>
-              <Card>
+              <Card
+                hoverable
+                onClick={() => navigate('/dashboard/reservations')}
+                style={{ cursor: 'pointer' }}
+              >
                 <Statistic
-                  title="Bookings"
+                  title={t('dashboard.cards.bookings', 'Bookings')}
                   value={stats.bookings}
                   prefix={<FontAwesomeIcon icon={faCalendar} style={{ color: '#52c41a' }} />}
                 />
               </Card>
             </Col>
             <Col xs={24} sm={12} md={8} lg={4}>
-              <Card>
+              <Card
+                hoverable
+                onClick={() => navigate('/dashboard/pets')}
+                style={{ cursor: 'pointer' }}
+              >
                 <Statistic
-                  title="Pets"
+                  title={t('dashboard.cards.pets', 'Pets')}
                   value={stats.pets}
                   prefix={<FontAwesomeIcon icon={faDog} style={{ color: '#faad14' }} />}
                 />
               </Card>
             </Col>
             <Col xs={24} sm={12} md={8} lg={4}>
-              <Card>
+              <Card
+                hoverable
+                onClick={() => navigate('/dashboard/rooms')}
+                style={{ cursor: 'pointer' }}
+              >
                 <Statistic
-                  title="Rooms"
-                  value={stats.rooms}
-                  prefix={<FontAwesomeIcon icon={faBed} style={{ color: '#722ed1' }} />}
+                  title={t('dashboard.cards.rooms', 'Rooms')}
+                  value={stats.roomsAvailable}
+                  formatter={() => (
+                    <span>
+                      <span style={{ color: '#52c41a' }}>{stats.roomsAvailable}</span>
+                      <span style={{ color: '#aaa' }}> / {stats.roomsTotal}</span>
+                    </span>
+                  )}
+                  prefix={<FontAwesomeIcon icon={faBed} style={{ color: '#52c41a' }} />}
                 />
               </Card>
             </Col>
             <Col xs={24} sm={12} md={8} lg={4}>
-              <Card>
+              <Card
+                hoverable
+                onClick={() => navigate('/dashboard/services')}
+                style={{ cursor: 'pointer' }}
+              >
                 <Statistic
-                  title="Services"
+                  title={t('dashboard.cards.services', 'Services')}
                   value={stats.services}
                   prefix={<FontAwesomeIcon icon={faConciergeBell} style={{ color: '#eb2f96' }} />}
                 />
               </Card>
             </Col>
           </Row>
-          <Card title="Overview (Coming Soon)">
+          <Card title={t('dashboard.overview', 'Overview (Coming Soon)')}>
             {/* Placeholder for future graphs/charts */}
             <div style={{ minHeight: 200, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#aaa' }}>
-              Graphs and analytics will be displayed here.
+              {t('dashboard.graphsPlaceholder', 'Graphs and analytics will be displayed here.')}
             </div>
           </Card>
         </>

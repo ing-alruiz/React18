@@ -1,0 +1,106 @@
+.topBar {
+  width: 100vw;
+  height: 6vh;
+  background: #0078d4;
+  /* Remove flex, use float layout */
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+  padding: 0 32px 0 24px;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+  z-index: 2000;
+  min-height: 44px;
+}
+
+.appName {
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  float: left;
+  line-height: 6vh;
+  height: 100%;
+}
+
+.profileWrapper {
+  float: right;
+  height: 100%;
+  /* Remove flex */
+  /* display: flex;
+  align-items: center; */
+}
+
+.langSelector {
+  float: left;
+  margin-right: 16px;
+  font-size: 1rem;
+  background: transparent;
+  color: #fff;
+  border: none;
+  outline: none;
+  min-width: 90px;
+  padding: 2px 8px;
+  transition: background 0.2s;
+  /* display: flex;
+  align-items: center; */
+  height: 36px;
+  line-height: 36px;
+}
+
+.langSelector:hover,
+.langSelector:focus {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+.profileMini {
+  height: 100%;
+  float: left;
+  padding: 0 8px;
+  font-size: 1rem;
+  width: 150px;
+  overflow: visible; /* <-- allow dropdown to show outside */
+  position: relative; /* <-- needed for absolute dropdown */
+  margin: auto;
+}
+
+.profileMini .avatar {
+  width: 36px !important;
+  height: 36px !important;
+  border-width: 1.5px !important;
+  float: left;
+  margin-top: 4px;
+}
+
+.profileMini .name {
+  font-size: 1rem !important;
+  margin-left: 6px !important;
+  float: left;
+  line-height: 44px;
+  max-width: 90px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profileMini .dropdown {
+  top: 44px !important;
+  min-width: 180px !important;
+  font-size: 0.97rem;
+  left: auto;
+  right: 0;
+  float: none;
+  position: absolute;
+  clear: both;
+  z-index: 9999; /* ensure above other elements */
+}
+
+/* Clear floats for the bar */
+.topBar::after {
+  content: "";
+  display: table;
+  clear: both;
+}

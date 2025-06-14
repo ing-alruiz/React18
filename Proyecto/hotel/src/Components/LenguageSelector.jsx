@@ -3,7 +3,7 @@ import { DownOutlined, GlobalOutlined } from '@ant-design/icons';
 import { Dropdown, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 
-const LanguageSelector = () => {
+const LanguageSelector = ({ className = '' }) => {
   const { i18n } = useTranslation();
 
   const handleMenuClick = (e) => {
@@ -35,8 +35,9 @@ const LanguageSelector = () => {
       }}
       placement="bottomRight"
     >
-     <a
+      <a
         onClick={e => e.preventDefault()}
+        className={className}
         style={{
           marginLeft: '1rem',
           padding: '0.3rem',

@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { fetchData, updateData } from '../../../Api/apiService';
 import apiEndpoints from '../../../Api/apiEndpoints';
 
-const ROOMS_ENDPOINT = apiEndpoints.roomTypes || '/roomTypes';
+const ROOMS_ENDPOINT = apiEndpoints.rooms || '/rooms';
 
 const RoomsPage = () => {
   const [rooms, setRooms] = useState([]);
@@ -29,7 +29,7 @@ const RoomsPage = () => {
     setLoading(true);
     try {
       await updateData(
-        typeof ROOMS_ENDPOINT === 'object' ? `${ROOMS_ENDPOINT.endpoint}/${record.id}` : `/roomTypes/${record.id}`,
+        typeof ROOMS_ENDPOINT === 'object' ? `${ROOMS_ENDPOINT.endpoint}/${record.id}` : `/rooms/${record.id}`,
         { ...record, deleted: true }
       );
       setRooms(prev => prev.filter(r => r.id !== record.id));
@@ -48,22 +48,30 @@ const RoomsPage = () => {
       width: 60,
     },
     {
-      title: 'Species',
-      dataIndex: 'species',
-      render: s => <Tag>{s}</Tag>,
+      title: 'Room Number',
+      dataIndex: 'roomNumber',
     },
     {
-      title: 'Name',
-      dataIndex: 'name',
+      title: 'Room Type',
+      dataIndex: 'roomTypeId',
     },
     {
-      title: 'Description',
-      dataIndex: 'description',
+      title: 'Status',
+      dataIndex: 'status',
+      render: status => <Tag color={status === 'maintenance' ? 'orange' : 'green'}>{status}</Tag>,
     },
     {
-      title: 'Price',
-      dataIndex: 'price',
-      render: price => <span>${price}</span>,
+      title: 'Floor',
+      dataIndex: 'floor',
+    },
+    {
+      title: 'Pets',
+      dataIndex: 'pets',
+      render: pets => pets && pets.length > 0 ? pets.join(', ') : '-',
+    },
+    {
+      title: 'Notes',
+      dataIndex: 'notes',
     },
     {
       title: 'Actions',
@@ -101,7 +109,7 @@ const RoomsPage = () => {
   ];
 
   return (
-    <div style={{ padding: 32 }}>
+    <div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
         <h2 style={{ margin: 0 }}>Rooms</h2>
         <Button

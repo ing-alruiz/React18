@@ -59,9 +59,11 @@ const MainNav = ({ className = '', ...props }) => {
               <div className={styles.menuItem + ' ' + (selectedKey.startsWith('/account') ? styles.selected : '')}>
                 <Link to="/account/profile" className={styles.menuLink}>{t('menu.account') || 'Account'}</Link>
               </div>
-              <div className={styles.menuItem}>
-                <Link to="/dashboard" className={styles.menuLink}>{t('menu.dashboard') || 'Dashboard'}</Link>
-              </div>
+              { user.type == 'admin' && (
+                <div className={styles.menuItem + ' ' + (selectedKey === '/dashboard' ? styles.selected : '')}>
+                  <Link to="/dashboard" className={styles.menuLink}>{t('menu.dashboard') || 'Admin Dashboard'}</Link>
+                </div>
+              )}
               <div
                 className={styles.menuItem}
                 onClick={() => {

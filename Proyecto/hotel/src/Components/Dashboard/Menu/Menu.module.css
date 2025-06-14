@@ -1,14 +1,17 @@
+/* Azure-style left menu with blue top bar and white sidebar */
 .sidebar {
   width: 260px;
-  background: #181b2a;
-  color: #fff;
+  background: #fff; /* White sidebar */
+  color: #222;
   min-height: 100vh;
-  padding: 24px 0 0 0;
+  padding: 0; /* Remove top padding */
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* changed from center to left align */
-  box-shadow: 2px 0 16px rgba(0, 0, 0, 0.1);
-  overflow-y: auto; /* allows scrolling if content overflows */
+  align-items: flex-start;
+  box-shadow: 2px 0 16px rgba(0, 0, 0, 0.07);
+  overflow-y: auto;
+  border-right: 1px solid #e5e7ef;
+  position: relative;
 }
 
 .profile {
@@ -16,6 +19,7 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 18px;
+  margin-top: 18px;
 }
 
 .avatar {
@@ -24,17 +28,18 @@
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 8px;
-  border: 2px solid #fff;
+  border: 2px solid #0078d4;
 }
 
 .name {
   font-weight: 600;
   font-size: 1.1rem;
+  color: #222;
 }
 
 .role {
   font-size: 0.9rem;
-  color: #b0b3c6;
+  color: #888;
   margin-bottom: 10px;
 }
 
@@ -48,7 +53,7 @@
 }
 
 .sectionTitle {
-  color: #7e84a3;
+  color: #6b7280;
   font-size: 0.85rem;
   font-weight: bold;
   margin: 18px 0 8px 32px;
@@ -59,20 +64,20 @@
 .menuItem {
   display: flex;
   align-items: center;
-  padding: 12px 20px 12px 32px; /* reduced right padding */
-  width: 220px; /* fixed width to prevent overflow */
+  padding: 12px 20px 12px 32px;
+  width: 220px;
   max-width: 220px;
   min-width: 180px;
   cursor: pointer;
-  color: #fff;
-  border-radius: 10px;
+  color: #222;
+  border-radius: 8px;
   margin-bottom: 4px;
-  transition: background 0.18s;
+  transition: background 0.18s, color 0.18s;
   position: relative;
   font-size: 1rem;
   font-weight: 500;
   gap: 12px;
-  justify-content: flex-start; /* align content to the left */
+  justify-content: flex-start;
   box-sizing: border-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -80,11 +85,13 @@
 
 .menuItem:hover,
 .menuItem.active {
-  background: #23263a;
+  background: #e6f2fb;
+  color: #0078d4;
 }
 
 .active {
-  background: #23263a;
+  background: #e6f2fb;
+  color: #0078d4;
 }
 
 .menuIcon {
@@ -93,11 +100,12 @@
   width: 22px;
   text-align: center;
   flex-shrink: 0;
+  color: inherit;
 }
 
 .plus {
   margin-left: auto;
-  color: #b0b3c6;
+  color: #0078d4;
   font-weight: bold;
   font-size: 1.2rem;
   flex-shrink: 0;

@@ -27,6 +27,10 @@ import Reservations from '../Pages/Account/Reservations';
 import FAQ from '../Pages/FAQ';
 import Terms from '../Pages/Terms';
 import Cookies from '../Pages/Cookies';
+import UsersPage from '../Pages/Dashboard/Users';
+import PetsPage from '../Pages/Dashboard/Pets';
+import ServicesAdminPage from '../Pages/Dashboard/Services';
+import RoomTypesPage from '../Pages/Dashboard/RoomTypes';
 
 const LayoutWrapper = () => (
   <MainLayout>
@@ -79,10 +83,50 @@ const AppRouter = () => (
           }
         />
         <Route
+          path="/dashboard/users"
+          element={
+            <AdminRoute>
+              <UsersPage />
+            </AdminRoute>
+          }
+        />
+        <Route
           path="/dashboard/bookings"
           element={
             <AdminRoute>
               <BookingsPage />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/pets"
+          element={
+            <AdminRoute>
+              <PetsPage />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/rooms"
+          element={
+            <AdminRoute>
+              <RoomsPage />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/services"
+          element={
+            <AdminRoute>
+              <ServicesAdminPage />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/dashboard/room-types"
+          element={
+            <AdminRoute>
+              <RoomTypesPage />
             </AdminRoute>
           }
         />
@@ -99,14 +143,6 @@ const AppRouter = () => (
           element={
             <AdminRoute>
               <BookinsModify />
-            </AdminRoute>
-          }
-        />
-        <Route
-          path="/dashboard/rooms"
-          element={
-            <AdminRoute>
-              <RoomsPage />
             </AdminRoute>
           }
         />

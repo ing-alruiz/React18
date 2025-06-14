@@ -12,10 +12,7 @@ const RoomNew = () => {
   const onFinish = async (values) => {
     setLoading(true);
     try {
-      await createData(
-        typeof apiEndpoints.roomTypes === 'object' ? apiEndpoints.roomTypes.endpoint : '/roomTypes',
-        values
-      );
+      await createData(apiEndpoints.rooms, { ...values, pets: [] });
       message.success('Room created!');
       navigate('/dashboard/rooms');
     } catch {
@@ -29,17 +26,23 @@ const RoomNew = () => {
     <div style={{ maxWidth: 500, margin: '32px auto' }}>
       <Card title="Create Room">
         <Form form={form} layout="vertical" onFinish={onFinish}>
-          <Form.Item name="name" label="Name" rules={[{ required: true }]}>
+          <Form.Item name="roomNumber" label="Room Number" rules={[{ required: true }]}>
             <Input />
           </Form.Item>
-          <Form.Item name="species" label="Species" rules={[{ required: true }]}>
+          <Form.Item name="roomTypeId" label="Room Type ID" rules={[{ required: true }]}>
             <Input />
           </Form.Item>
-          <Form.Item name="description" label="Description">
-            <Input.TextArea rows={3} />
+          <Form.Item name="status" label="Status" rules={[{ required: true }]}>
+            <Select>
+              <Select.Option value="available">Available</Select.Option>
+              <Select.Option value="maintenance">Maintenance</Select.Option>
+            </Select>
           </Form.Item>
-          <Form.Item name="price" label="Price" rules={[{ required: true }]}>
-            <InputNumber min={0} prefix="$" style={{ width: '100%' }} />
+          <Form.Item name="floor" label="Floor" rules={[{ required: true }]}>
+            <InputNumber min={1} style={{ width: '100%' }} />
+          </Form.Item>
+          <Form.Item name="notes" label="Notes">
+            <Input.TextArea rows={2} />
           </Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit" loading={loading} block>

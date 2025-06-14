@@ -222,43 +222,29 @@
       "address": "Calle 1, Ciudad",
       "phone": "600123123",
       "type": "cliente",
-      "pets": [
-        {
-          "id": 1,
-          "name": "Rocky",
-          "species": "perro",
-          "breed": "Labrador",
-          "age": 3,
-          "size": "Grande",
-          "weight": 30,
-          "specialNeeds": "Sin necesidades especiales",
-          "temperament": "Juguetón",
-          "vaccines": [
-            "Rabia",
-            "Parvovirus"
-          ],
-          "photo": "/images/rocky.jpg"
-        }
-      ]
+      "pets": [1]
     },
     {
       "id": "ce7f",
       "name": "Beto",
       "email": "beto@test.com",
       "password": "e95eef675e2cbbe6ea7e61dc3d7b6c5767b44a1704a02c6109e6f8668d8afa8e",
-      "type": "admin"
+      "type": "admin",
+      "pets": []
     },
     {
       "id": "cda8",
       "name": "beto2",
       "email": "golas@isd.com",
-      "password": "e95eef675e2cbbe6ea7e61dc3d7b6c5767b44a1704a02c6109e6f8668d8afa8e"
+      "password": "e95eef675e2cbbe6ea7e61dc3d7b6c5767b44a1704a02c6109e6f8668d8afa8e",
+      "pets": []
     },
     {
       "id": "a112",
       "name": "beto",
       "email": "adsasd@adsasd.com",
-      "password": "b7459304c09640e31a2bae97c6371d69a99db97a234563dbbb460751543e2ace"
+      "password": "b7459304c09640e31a2bae97c6371d69a99db97a234563dbbb460751543e2ace",
+      "pets": []
     }
   ],
   "usersTypes": [
@@ -332,6 +318,77 @@
       "id": "2",
       "question": "¿Puedo llevar la comida de mi mascota?",
       "answer": "Sí, aceptamos alimentación personalizada."
+    }
+  ],
+  "rooms": [
+    { "id": 1, "roomNumber": "101", "roomTypeId": "1", "status": "available", "floor": 1, "notes": "", "pets": [] },
+    { "id": 2, "roomNumber": "102", "roomTypeId": "1", "status": "available", "floor": 1, "notes": "", "pets": [] },
+    { "id": 3, "roomNumber": "103", "roomTypeId": "2", "status": "available", "floor": 1, "notes": "", "pets": [] },
+    { "id": 4, "roomNumber": "104", "roomTypeId": "2", "status": "maintenance", "floor": 1, "notes": "Cleaning", "pets": [] },
+    { "id": 5, "roomNumber": "105", "roomTypeId": "3", "status": "available", "floor": 1, "notes": "", "pets": [] },
+    { "id": 6, "roomNumber": "106", "roomTypeId": "3", "status": "available", "floor": 1, "notes": "", "pets": [] },
+    { "id": 7, "roomNumber": "107", "roomTypeId": "4", "status": "available", "floor": 1, "notes": "", "pets": [] },
+    { "id": 8, "roomNumber": "108", "roomTypeId": "4", "status": "available", "floor": 1, "notes": "", "pets": [] },
+    { "id": 9, "roomNumber": "109", "roomTypeId": "5", "status": "available", "floor": 1, "notes": "", "pets": [] },
+    { "id": 10, "roomNumber": "110", "roomTypeId": "5", "status": "available", "floor": 1, "notes": "", "pets": [] },
+    { "id": 11, "roomNumber": "201", "roomTypeId": "1", "status": "available", "floor": 2, "notes": "", "pets": [] },
+    { "id": 12, "roomNumber": "202", "roomTypeId": "1", "status": "available", "floor": 2, "notes": "", "pets": [] },
+    { "id": 13, "roomNumber": "203", "roomTypeId": "2", "status": "available", "floor": 2, "notes": "", "pets": [] },
+    { "id": 14, "roomNumber": "204", "roomTypeId": "2", "status": "available", "floor": 2, "notes": "", "pets": [] },
+    { "id": 15, "roomNumber": "205", "roomTypeId": "3", "status": "maintenance", "floor": 2, "notes": "Plumbing", "pets": [] },
+    { "id": 16, "roomNumber": "206", "roomTypeId": "3", "status": "available", "floor": 2, "notes": "", "pets": [] },
+    { "id": 17, "roomNumber": "207", "roomTypeId": "4", "status": "available", "floor": 2, "notes": "", "pets": [] },
+    { "id": 18, "roomNumber": "208", "roomTypeId": "4", "status": "available", "floor": 2, "notes": "", "pets": [] },
+    { "id": 19, "roomNumber": "209", "roomTypeId": "5", "status": "available", "floor": 2, "notes": "", "pets": [] },
+    { "id": 20, "roomNumber": "210", "roomTypeId": "5", "status": "available", "floor": 2, "notes": "", "pets": [] },
+    { "id": 21, "roomNumber": "301", "roomTypeId": "1", "status": "available", "floor": 3, "notes": "", "pets": [] },
+    { "id": 22, "roomNumber": "302", "roomTypeId": "1", "status": "maintenance", "floor": 3, "notes": "Painting", "pets": [] },
+    { "id": 23, "roomNumber": "303", "roomTypeId": "2", "status": "available", "floor": 3, "notes": "", "pets": [] },
+    { "id": 24, "roomNumber": "304", "roomTypeId": "2", "status": "available", "floor": 3, "notes": "", "pets": [] },
+    { "id": 25, "roomNumber": "305", "roomTypeId": "3", "status": "available", "floor": 3, "notes": "", "pets": [] },
+    { "id": 26, "roomNumber": "306", "roomTypeId": "3", "status": "available", "floor": 3, "notes": "", "pets": [] },
+    { "id": 27, "roomNumber": "307", "roomTypeId": "4", "status": "available", "floor": 3, "notes": "", "pets": [] },
+    { "id": 28, "roomNumber": "308", "roomTypeId": "4", "status": "available", "floor": 3, "notes": "", "pets": [] },
+    { "id": 29, "roomNumber": "309", "roomTypeId": "5", "status": "available", "floor": 3, "notes": "", "pets": [] },
+    { "id": 30, "roomNumber": "310", "roomTypeId": "5", "status": "maintenance", "floor": 3, "notes": "AC repair", "pets": [] },
+    { "id": 31, "roomNumber": "401", "roomTypeId": "1", "status": "available", "floor": 4, "notes": "", "pets": [] },
+    { "id": 32, "roomNumber": "402", "roomTypeId": "1", "status": "available", "floor": 4, "notes": "", "pets": [] },
+    { "id": 33, "roomNumber": "403", "roomTypeId": "2", "status": "available", "floor": 4, "notes": "", "pets": [] },
+    { "id": 34, "roomNumber": "404", "roomTypeId": "2", "status": "available", "floor": 4, "notes": "", "pets": [] },
+    { "id": 35, "roomNumber": "405", "roomTypeId": "3", "status": "available", "floor": 4, "notes": "", "pets": [] },
+    { "id": 36, "roomNumber": "406", "roomTypeId": "3", "status": "available", "floor": 4, "notes": "", "pets": [] },
+    { "id": 37, "roomNumber": "407", "roomTypeId": "4", "status": "available", "floor": 4, "notes": "", "pets": [] },
+    { "id": 38, "roomNumber": "408", "roomTypeId": "4", "status": "available", "floor": 4, "notes": "", "pets": [] },
+    { "id": 39, "roomNumber": "409", "roomTypeId": "5", "status": "available", "floor": 4, "notes": "", "pets": [] },
+    { "id": 40, "roomNumber": "410", "roomTypeId": "5", "status": "available", "floor": 4, "notes": "", "pets": [] },
+    { "id": 41, "roomNumber": "501", "roomTypeId": "1", "status": "available", "floor": 5, "notes": "", "pets": [] },
+    { "id": 42, "roomNumber": "502", "roomTypeId": "1", "status": "available", "floor": 5, "notes": "", "pets": [] },
+    { "id": 43, "roomNumber": "503", "roomTypeId": "2", "status": "maintenance", "floor": 5, "notes": "Window repair", "pets": [] },
+    { "id": 44, "roomNumber": "504", "roomTypeId": "2", "status": "available", "floor": 5, "notes": "", "pets": [] },
+    { "id": 45, "roomNumber": "505", "roomTypeId": "3", "status": "available", "floor": 5, "notes": "", "pets": [] },
+    { "id": 46, "roomNumber": "506", "roomTypeId": "3", "status": "available", "floor": 5, "notes": "", "pets": [] },
+    { "id": 47, "roomNumber": "507", "roomTypeId": "4", "status": "available", "floor": 5, "notes": "", "pets": [] },
+    { "id": 48, "roomNumber": "508", "roomTypeId": "4", "status": "available", "floor": 5, "notes": "", "pets": [] },
+    { "id": 49, "roomNumber": "509", "roomTypeId": "5", "status": "available", "floor": 5, "notes": "", "pets": [] },
+    { "id": 50, "roomNumber": "510", "roomTypeId": "5", "status": "maintenance", "floor": 5, "notes": "Deep cleaning", "pets": [] }
+  ],
+  "pets": [
+    {
+      "id": 1,
+      "userId": "1",
+      "name": "Rocky",
+      "species": "perro",
+      "breed": "Labrador",
+      "age": 3,
+      "size": "Grande",
+      "weight": 30,
+      "specialNeeds": "Sin necesidades especiales",
+      "temperament": "Juguetón",
+      "vaccines": [
+        "Rabia",
+        "Parvovirus"
+      ],
+      "photo": "/images/rocky.jpg"
     }
   ]
 }

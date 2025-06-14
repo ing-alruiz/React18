@@ -15,7 +15,7 @@ export default function Login() {
     // Use email as username
     const success = await login(values.username, values.password);
     if (success) {
-      navigate('/home');
+      navigate('/');
     } else {
       // Show error message (Ant Design notification or message)
       // For simplicity, use alert here:

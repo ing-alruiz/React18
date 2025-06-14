@@ -106,7 +106,7 @@ const BookingsPage = () => {
   ];
 
   return (
-    <div style={{ padding: 32 }}>
+    <div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
         <h2 style={{ margin: 0 }}>Latest Bookings</h2>
         <Button

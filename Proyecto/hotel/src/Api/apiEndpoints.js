@@ -7,10 +7,30 @@ const apiEndpoints = {
         endpoint: '/services',
         method: 'GET',
     },
+    rooms: {
+        endpoint: '/rooms',
+        method: 'GET',
+    },
+    room: (id) => ({
+        endpoint: `/rooms/${id}`,
+        method: 'PATCH',
+    }),
+    createRoom: {
+        endpoint: '/rooms',
+        method: 'POST',
+    },
+    updateRoom: (id) => ({
+        endpoint: `/rooms/${id}`,
+        method: 'PUT',
+    }),
     roomTypes: {
         endpoint: '/roomTypes',
         method: 'GET',
     },
+    roomType: (id) => ({
+        endpoint: `/roomTypes/${id}`,
+        method: 'PATCH',
+    }),
     createRoomType: {
         endpoint: '/roomTypes',
         method: 'POST',

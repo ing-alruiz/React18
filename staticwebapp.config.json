@@ -1,0 +1,80 @@
+{
+  "routes": [
+    {
+      "route": "/api/*",
+      "allowedRoles": [
+        "anonymous",
+        "authenticated"
+      ],
+      "rewrite": "/api"
+    },
+    {
+      "route": "/dashboard/*",
+      "serve": "/index.html"
+    },
+    {
+      "route": "/account/*",
+      "serve": "/index.html"
+    },
+    {
+      "route": "/bookings/*",
+      "serve": "/index.html"
+    },
+    {
+      "route": "/rooms/*",
+      "serve": "/index.html"
+    },
+    {
+      "route": "/services/*",
+      "serve": "/index.html"
+    },
+    {
+      "route": "/room-types/*",
+      "serve": "/index.html"
+    },
+    {
+      "route": "/pets/*",
+      "serve": "/index.html"
+    },
+    {
+      "route": "/faq",
+      "serve": "/index.html"
+    },
+    {
+      "route": "/gallery",
+      "serve": "/index.html"
+    },
+    {
+      "route": "/privacy",
+      "serve": "/index.html"
+    },
+    {
+      "route": "/terms",
+      "serve": "/index.html"
+    },
+    {
+      "route": "/cookies",
+      "serve": "/index.html"
+    },
+    {
+      "route": "/about",
+      "serve": "/index.html"
+    },
+    {
+      "route": "/book",
+      "serve": "/index.html"
+    },
+    {
+      "route": "/login",
+      "serve": "/index.html"
+    },
+    {
+      "route": "/signup",
+      "serve": "/index.html"
+    },
+    {
+      "route": "/",
+      "serve": "/index.html"
+    }
+  ]
+}
